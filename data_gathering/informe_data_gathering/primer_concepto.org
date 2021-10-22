@@ -147,42 +147,76 @@ print(famous_dataframe)
 import pandas as pd
 
 colombia_scene_list = []
+#añado los datos del dataframe que hice de famosos previamente
 for i in famous_dataframe["name"]:
     data = {"name":i,
-            "font":"famous"}
+            "lugar_extraido":"pagina_artistas_famosos"}
     colombia_scene_list.append(data)
 
+#añado los datos del dataframe que hice de BOMM previamente
 for i in bomm_data["band_name"]:
     data = {"name":i,
-            "font":"bomm"}
+            "lugar_extraido":"bomm"}
     colombia_scene_list.append(data)
 
+#añado los datos que descargue del SIMUS
 for i in datos_simus["Nombre"]:
     data = {"name":i,
-            "font":"simus"}
+            "lugar_extraido":"simus"}
     colombia_scene_list.append(data)
 
 colombia_state_names = pd.DataFrame(colombia_scene_list)
-print(colombia_state_names)
+#
+#guardo los datos para vincularlos posteriormente con spotify y con youtube
+colombia_state_names.to_csv("nombres_bandas_generados.csv")
+print(colombia_state_names.tail(5))
+#+end_src
 
+#+RESULTS:
+:                                                    name lugar_extraido
+: 1239  Semillero escuela Municipal de música de Piendamó          simus
+: 1240                   Chirimia del Pacifico Colombiano          simus
+: 1241            ESCUELA DE FORMACION MUSICAL PAEZ VIVE           simus
+: 1242                                   Pal' Lereo Pabla          simus
+: 1243                                       Mar a fuera           simus
+
+** Merge con Spotify:
+*** Concepto
+Spotify cuenta con una API bastante completa que suministra mucha información
+sobre las bandas que se encuentran en esta plataforma. Ya que se tiene un
+dataset con muchos nombres de bandas que suenan en la escena de
+la música colombiana, ahora lo que busco es enriquecer los datos que tengo
+buscando los nombres de las bandas en spotify y extrayendo sus features. En un
+proyecto anterior, junto con Juan Pablo, habíamos hecho una clase que funcionaba
+dentro de la API de spotify para relacionar nombres de artistas con sus
+respectivos ids en spotify
+
+*** Proceso de enriquecer los datos:
+previamente se almacenaron los datos en "nombres_bandas_generados.csv" , lo que
+busco es asociar a cada artista con su respectivo id de spotify con el fin de
+luego poder extraer la información correspondiente a este
+
+*fue muy pesado el script que hacía el merge por lo que me tocó correrlo como un script aparte que está en el repositorio pero no se puede correr desde el documento*, de todas formas, los datos sobre los que se va a trabajar el proyecto son estos (aunque luego se podrían adjuntar matrices respectivas a las músicas de cada artista de ser pertinente)
+#+begin_src python :results output :exports both :session simus
+import pandas as pd
+final_data = pd.read_csv("final_data.csv")
+print(final_data.head(4))
+print(final_data.columns)
+print(final_data.shape)
 #+end_src
 
 #+RESULTS:
 #+begin_example
-                                                   name    font
-0                                               Shakira  famous
-1                                                Juanes  famous
-2                                         Mateo Camargo  famous
-3                                     Alfredo Gutierrez  famous
-4                                         Alex González  famous
-...                                                 ...     ...
-1239  Semillero escuela Municipal de música de Piendamó   simus
-1240                   Chirimia del Pacifico Colombiano   simus
-1241            ESCUELA DE FORMACION MUSICAL PAEZ VIVE    simus
-1242                                   Pal' Lereo Pabla   simus
-1243                                       Mar a fuera    simus
+   Unnamed: 0      name_scrapped                      id                                       link_spotify  followers  ... popularidad  nombre_en_spotify  type_of_artist           lugar_extraido index_on_last_dataset
+0           0            Shakira  <built-in function id>  https://open.spotify.com/artist/0EmeFodog0BfCg...   22483270  ...          85            Shakira  <class 'type'>  pagina_artistas_famosos                     1
+1           1             Juanes  <built-in function id>  https://open.spotify.com/artist/0UWZUmn7sybxMC...    3438332  ...          77             Juanes  <class 'type'>  pagina_artistas_famosos                     2
+2           2      Mateo Camargo  <built-in function id>                                    not in database          0  ...           0    not in database  <class 'type'>  pagina_artistas_famosos                     3
+3           3  Alfredo Gutierrez  <built-in function id>  https://open.spotify.com/artist/7esYnrPzQX1JWW...      77452  ...          47  Alfredo Gutierrez  <class 'type'>  pagina_artistas_famosos                     4
 
-[1244 rows x 2 columns]
+[4 rows x 12 columns]
+Index(['Unnamed: 0', 'name_scrapped', 'id', 'link_spotify', 'followers',
+       'generos', 'imagenes', 'popularidad', 'nombre_en_spotify',
+       'type_of_artist', 'lugar_extraido', 'index_on_last_dataset'],
+      dtype='object')
+(1244, 12)
 #+end_example
-
-** Merge con Spotify:
