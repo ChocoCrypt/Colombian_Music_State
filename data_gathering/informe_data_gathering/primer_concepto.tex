@@ -1,8 +1,38 @@
-#+TITLE: Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana
-#+AUTHOR:Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán.
+% Created 2021-10-22 Fri 01:23
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán.}
+\date{\today}
+\title{Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana}
+\hypersetup{
+ pdfauthor={Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán.},
+ pdftitle={Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
 
 
-* Qué base de datos escogieron.
+
+\section{Qué base de datos escogieron.}
+\label{sec:orgfe3c9e9}
 La idea de este proyecto es hacer un análisis del estado de las bandas musicales
 en la escena musical colombiana, sin embargo, aunque existen muchas bases de
 datos y formas diversas
@@ -16,18 +46,19 @@ no tienen influencia sobre los miembros del grupo y sobre los cuales ya existen
 análisis muy complejos hechos por gente mas experimentada, por lo que el grupo
 se dispuso a hacer su propio dataframe de la música en Colombia.
 
-** Metodología de la recolección de datos sobre bandas en la escena colombiana
-*** SIMUS
+\subsection{Metodología de la recolección de datos sobre bandas en la escena colombiana}
+\label{sec:orgbe7e7ce}
+\subsubsection{SIMUS}
+\label{sec:org2d391ae}
 Existen diversos datos sobre bandas colombianas , por ejemplo existe una entidad que se llama el SIMUS en el cuál las bandas musicales que tienen contrataciones tienen que registratse legalmente, esta base de datos cuenta con 882 bandas que se han registrado legalmente.
-#+begin_src python :results output :exports both :session simus
+\begin{verbatim}
 import pandas as pd
 datos_simus = pd.read_excel("bandas_simus.xls")
 print(datos_simus.head(10))
 print(datos_simus.shape)
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-#+begin_example
+\begin{verbatim}
                                             Nombre                        Tipo Agrupacion      Pais  Departamento       Municipio     Estado
 0  Ensamble musical casa de la cultura San Alberto                               Conjunto  COLOMBIA         CESAR     SAN ALBERTO  Publicado
 1                 Charlie Rueda & The Jazzmorgans   Agrupaciones de Música Popular Urbana  COLOMBIA     SANTANDER     BUCARAMANGA  Publicado
@@ -40,19 +71,22 @@ print(datos_simus.shape)
 8                        banda escuela 16 de julio                                  Banda  COLOMBIA       BOLÍVAR  SAN ESTANISLAO  Publicado
 9       gaita casa de la cultura de san estanislao     Agrupaciones de Música Tradicional  COLOMBIA       BOLÍVAR  SAN ESTANISLAO  Publicado
 (882, 6)
-#+end_example
+\end{verbatim}
 
 En esta base de datos cuenta con las columnas:
-- nombre de la banda
-- tipo de agrupación
-- país(todas son colombianas)
-- Departamento del país
-- Municipio
-- Estado de la banda
-*** BOMM (Bogotá Music Market)
-Existe una revista llamada BOMM es una plataforma de promoción y circulación organizada por la Cámara de Comercio de Bogotá, como parte de su programa de apoyo a las Industrias Creativas y Culturales, en esta página existe un catálogo de las bandas que han participado en eventos en el año 2021 (https://www.bogotamusicmarket.com/Artistas?year=2021) (no existen mas años y este input es vulnerable a RCE injection por si alguien quiere decirle a los de BOMM).
+\begin{itemize}
+\item nombre de la banda
+\item tipo de agrupación
+\item país(todas son colombianas)
+\item Departamento del país
+\item Municipio
+\item Estado de la banda
+\end{itemize}
+\subsubsection{BOMM (Bogotá Music Market)}
+\label{sec:org519ba6d}
+Existe una revista llamada BOMM es una plataforma de promoción y circulación organizada por la Cámara de Comercio de Bogotá, como parte de su programa de apoyo a las Industrias Creativas y Culturales, en esta página existe un catálogo de las bandas que han participado en eventos en el año 2021 (\url{https://www.bogotamusicmarket.com/Artistas?year=2021}) (no existen mas años y este input es vulnerable a RCE injection por si alguien quiere decirle a los de BOMM).
 En BOMM no existe propiamente un Dataset, sin embargo, están todas los artistas inscritos, por lo que se puede hacer un simple programa que los scrapee:
-#+begin_src python :results output :exports both :session simus
+\begin{verbatim}
 from selenium import webdriver
 import pandas as pd
 from time import sleep
@@ -88,10 +122,9 @@ while(not_done):
 bomm_data = pd.DataFrame(bomm_list)
 print(bomm_data)
 print(bomm_data.shape())
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-#+begin_example
+\begin{verbatim}
 done
               band_name
 0    8bm - 8bits Memory
@@ -107,24 +140,24 @@ done
 256              Zultan
 
 [257 rows x 1 columns]
-#+end_example
+\end{verbatim}
 
-*** Bandas o cantantes famosos
-Con el fin del proyecto, una de las cosas que se busca analizar es que factores hacen que una banda sea famosa y que otra no , por lo que también añadiré una lista de cantantes muy famosos colombianos al dataset también scrapeado de https://www.ranker.com/list/bands-from-colombia/reference
+\subsubsection{Bandas o cantantes famosos}
+\label{sec:org18bd128}
+Con el fin del proyecto, una de las cosas que se busca analizar es que factores hacen que una banda sea famosa y que otra no , por lo que también añadiré una lista de cantantes muy famosos colombianos al dataset también scrapeado de \url{https://www.ranker.com/list/bands-from-colombia/reference}
 
-*nota:el script que scrapeo estos datos está en el repositorio pero no se puede llamar desde el notebook pues es un poco mañoso*
+\textbf{nota:el script que scrapeo estos datos está en el repositorio pero no se puede llamar desde el notebook pues es un poco mañoso}
 
-#+begin_src python :results output :exports both :session simus
+\begin{verbatim}
 import json
 import pandas as pd
 with open("famous_data.json") as file:
     data = json.load(file)
 famous_dataframe = pd.DataFrame(data)
 print(famous_dataframe)
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-#+begin_example
+\begin{verbatim}
                       name
 0                  Shakira
 1                   Juanes
@@ -139,11 +172,12 @@ print(famous_dataframe)
 104  David Escobar Gallego
 
 [105 rows x 1 columns]
-#+end_example
+\end{verbatim}
 
-*** Sin embargo, lo que se pretende con estos datos es extraer solamente los nombres de las bandas activas en la escena colombiana, pues, posteriormente, a partir de estas bandas se obtendrá la información de spotify, por lo que unificaré los datos.
+\subsubsection{Sin embargo, lo que se pretende con estos datos es extraer solamente los nombres de las bandas activas en la escena colombiana, pues, posteriormente, a partir de estas bandas se obtendrá la información de spotify, por lo que unificaré los datos.}
+\label{sec:orgc09805d}
 
-#+begin_src python :results output :exports both :session simus
+\begin{verbatim}
 import pandas as pd
 
 colombia_scene_list = []
@@ -170,18 +204,21 @@ colombia_state_names = pd.DataFrame(colombia_scene_list)
 #guardo los datos para vincularlos posteriormente con spotify y con youtube
 colombia_state_names.to_csv("nombres_bandas_generados.csv")
 print(colombia_state_names.tail(5))
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-:                                                    name lugar_extraido
-: 1239  Semillero escuela Municipal de música de Piendamó          simus
-: 1240                   Chirimia del Pacifico Colombiano          simus
-: 1241            ESCUELA DE FORMACION MUSICAL PAEZ VIVE           simus
-: 1242                                   Pal' Lereo Pabla          simus
-: 1243                                       Mar a fuera           simus
+\begin{verbatim}
+                                                   name lugar_extraido
+1239  Semillero escuela Municipal de música de Piendamó          simus
+1240                   Chirimia del Pacifico Colombiano          simus
+1241            ESCUELA DE FORMACION MUSICAL PAEZ VIVE           simus
+1242                                   Pal' Lereo Pabla          simus
+1243                                       Mar a fuera           simus
+\end{verbatim}
 
-** Merge con Spotify:
-*** Concepto
+\subsection{Merge con Spotify:}
+\label{sec:org74ca8fa}
+\subsubsection{Concepto}
+\label{sec:orgdd832cc}
 Spotify cuenta con una API bastante completa que suministra mucha información
 sobre las bandas que se encuentran en esta plataforma. Ya que se tiene un
 dataset con muchos nombres de bandas que suenan en la escena de
@@ -191,22 +228,22 @@ proyecto anterior, junto con Juan Pablo, habíamos hecho una clase que funcionab
 dentro de la API de spotify para relacionar nombres de artistas con sus
 respectivos ids en spotify
 
-*** Proceso de enriquecer los datos:
-previamente se almacenaron los datos en "nombres_bandas_generados.csv" , lo que
+\subsubsection{Proceso de enriquecer los datos:}
+\label{sec:org441e814}
+previamente se almacenaron los datos en ``nombres\textsubscript{bandas}\textsubscript{generados.csv}'' , lo que
 busco es asociar a cada artista con su respectivo id de spotify con el fin de
 luego poder extraer la información correspondiente a este
 
-*fue muy pesado el script que hacía el merge por lo que me tocó correrlo como un script aparte que está en el repositorio pero no se puede correr desde el documento*, de todas formas, los datos sobre los que se va a trabajar el proyecto son estos (aunque luego se podrían adjuntar matrices respectivas a las músicas de cada artista de ser pertinente)
-#+begin_src python :results output :exports both :session simus
+\textbf{fue muy pesado el script que hacía el merge por lo que me tocó correrlo como un script aparte que está en el repositorio pero no se puede correr desde el documento}, de todas formas, los datos sobre los que se va a trabajar el proyecto son estos (aunque luego se podrían adjuntar matrices respectivas a las músicas de cada artista de ser pertinente)
+\begin{verbatim}
 import pandas as pd
 final_data = pd.read_csv("final_data.csv")
 print(final_data.head(4))
 print(final_data.columns)
 print(final_data.shape)
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-#+begin_example
+\begin{verbatim}
    Unnamed: 0      name_scrapped                      id                                       link_spotify  followers  ... popularidad  nombre_en_spotify  type_of_artist           lugar_extraido index_on_last_dataset
 0           0            Shakira  <built-in function id>  https://open.spotify.com/artist/0EmeFodog0BfCg...   22483270  ...          85            Shakira  <class 'type'>  pagina_artistas_famosos                     1
 1           1             Juanes  <built-in function id>  https://open.spotify.com/artist/0UWZUmn7sybxMC...    3438332  ...          77             Juanes  <class 'type'>  pagina_artistas_famosos                     2
@@ -219,25 +256,35 @@ Index(['Unnamed: 0', 'name_scrapped', 'id', 'link_spotify', 'followers',
        'type_of_artist', 'lugar_extraido', 'index_on_last_dataset'],
       dtype='object')
 (1244, 12)
-#+end_example
+\end{verbatim}
 
-* Razón por la cuál elegimos esta base de datos:
-** 1
+\section{Razón por la cuál elegimos esta base de datos:}
+\label{sec:org221346a}
+\subsection{1}
+\label{sec:org1ce1ac4}
 porque junto con Juan Pablo nos divertimos haciendo proyectos relacionados con música ya que siempre descubrimos bandas excelentes. Además, porque tiene sentido estudiar la música que consumimos.
-** 2
+\subsection{2}
+\label{sec:org51d3326}
 porque el hecho de que no existan datasets sobre el tema implica que es un tema que nadie ha estudiado con rigurosidad, y este análisis le puede servir a promotores de la industria musical o a bandas de amigos que quieran tomar estrategias para aumentar su popularidad.
-** 3
+\subsection{3}
+\label{sec:org9e7db43}
 porque este proyecto puede revelar un panorama muy interesante de la música en Colombia
 
-* Qué métodos pueden potencialmente aplicarse con dicha base de datos.
-** Respecto a la comparación:
+\section{Qué métodos pueden potencialmente aplicarse con dicha base de datos.}
+\label{sec:orgec54276}
+\subsection{Respecto a la comparación:}
+\label{sec:org6b34803}
 Se pueden usar métodos de comparación para ver que factores influyen en la popularidad de un artista en Colombia
-** Respecto a la clasificación:
+\subsection{Respecto a la clasificación:}
+\label{sec:org472cf74}
 Se puede intentar aplicar métodos de regresiones logísticas para saber si un artista, según sus features, va a ser popular o no
-** Respecto al clustering:
+\subsection{Respecto al clustering:}
+\label{sec:orge6254d7}
 Se puede aplicar modelos de clustering como Kmeans para entender que tipos de bandas suenan en nuestro país
-** Respecto a la reducción de dimensionalidad:
+\subsection{Respecto a la reducción de dimensionalidad:}
+\label{sec:orgaca0c0f}
 Se puede reducir la dimensión de las matrices de los mel-espectrogramas de
 canciones de los artistas para poder visualizar en un plano un panorama completo de la música
 colombiana (que en realidad es mi meta personal con este proyecto.) , con esto,
 tener una visión mas clara de como se mueve la onda musical en Bogotá.
+\end{document}
