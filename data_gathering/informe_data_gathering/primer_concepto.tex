@@ -1,8 +1,38 @@
-#+TITLE: Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana
-#+AUTHOR:Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán.
+% Created 2021-10-21 Thu 20:26
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán.}
+\date{\today}
+\title{Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana}
+\hypersetup{
+ pdfauthor={Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán.},
+ pdftitle={Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
 
 
-* Qué base de datos escogieron.
+
+\section{Qué base de datos escogieron.}
+\label{sec:org349f8b3}
 La idea de este proyecto es hacer un análisis del estado de las bandas musicales
 en la escena musical colombiana, sin embargo, aunque existen muchas bases de
 datos y formas diversas
@@ -16,18 +46,19 @@ no tienen influencia sobre los miembros del grupo y sobre los cuales ya existen
 análisis muy complejos hechos por gente mas experimentada, por lo que el grupo
 se dispuso a hacer su propio dataframe de la música en Colombia.
 
-** Metodología de la recolección de datos sobre bandas en la escena colombiana
-*** SIMUS
+\subsection{Metodología de la recolección de datos sobre bandas en la escena colombiana}
+\label{sec:org3df0bc2}
+\subsubsection{SIMUS}
+\label{sec:org132f07d}
 Existen diversos datos sobre bandas colombianas , por ejemplo existe una entidad que se llama el SIMUS en el cuál las bandas musicales que tienen contrataciones tienen que registratse legalmente, esta base de datos cuenta con 882 bandas que se han registrado legalmente.
-#+begin_src python :results output :exports both :session simus
+\begin{verbatim}
 import pandas as pd
 datos_simus = pd.read_excel("bandas_simus.xls")
 print(datos_simus.head(10))
 print(datos_simus.shape)
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-#+begin_example
+\begin{verbatim}
                                             Nombre                        Tipo Agrupacion      Pais  Departamento       Municipio     Estado
 0  Ensamble musical casa de la cultura San Alberto                               Conjunto  COLOMBIA         CESAR     SAN ALBERTO  Publicado
 1                 Charlie Rueda & The Jazzmorgans   Agrupaciones de Música Popular Urbana  COLOMBIA     SANTANDER     BUCARAMANGA  Publicado
@@ -40,19 +71,22 @@ print(datos_simus.shape)
 8                        banda escuela 16 de julio                                  Banda  COLOMBIA       BOLÍVAR  SAN ESTANISLAO  Publicado
 9       gaita casa de la cultura de san estanislao     Agrupaciones de Música Tradicional  COLOMBIA       BOLÍVAR  SAN ESTANISLAO  Publicado
 (882, 6)
-#+end_example
+\end{verbatim}
 
 En esta base de datos cuenta con las columnas:
-- nombre de la banda
-- tipo de agrupación
-- país(todas son colombianas)
-- Departamento del país
-- Municipio
-- Estado de la banda
-*** BOMM (Bogotá Music Market)
-Existe una revista llamada BOMM es una plataforma de promoción y circulación organizada por la Cámara de Comercio de Bogotá, como parte de su programa de apoyo a las Industrias Creativas y Culturales, en esta página existe un catálogo de las bandas que han participado en eventos en el año 2021 (https://www.bogotamusicmarket.com/Artistas?year=2021) (no existen mas años y este input es vulnerable a RCE injection por si alguien quiere decirle a los de BOMM).
+\begin{itemize}
+\item nombre de la banda
+\item tipo de agrupación
+\item país(todas son colombianas)
+\item Departamento del país
+\item Municipio
+\item Estado de la banda
+\end{itemize}
+\subsubsection{BOMM (Bogotá Music Market)}
+\label{sec:org28476e1}
+Existe una revista llamada BOMM es una plataforma de promoción y circulación organizada por la Cámara de Comercio de Bogotá, como parte de su programa de apoyo a las Industrias Creativas y Culturales, en esta página existe un catálogo de las bandas que han participado en eventos en el año 2021 (\url{https://www.bogotamusicmarket.com/Artistas?year=2021}) (no existen mas años y este input es vulnerable a RCE injection por si alguien quiere decirle a los de BOMM).
 En BOMM no existe propiamente un Dataset, sin embargo, están todas los artistas inscritos, por lo que se puede hacer un simple programa que los scrapee:
-#+begin_src python :results output :exports both :session simus
+\begin{verbatim}
 from selenium import webdriver
 import pandas as pd
 from time import sleep
@@ -88,10 +122,9 @@ while(not_done):
 bomm_data = pd.DataFrame(bomm_list)
 print(bomm_data)
 print(bomm_data.shape())
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-#+begin_example
+\begin{verbatim}
 done
               band_name
 0    8bm - 8bits Memory
@@ -107,24 +140,24 @@ done
 256              Zultan
 
 [257 rows x 1 columns]
-#+end_example
+\end{verbatim}
 
-*** Bandas o cantantes famosos
-Con el fin del proyecto, una de las cosas que se busca analizar es que factores hacen que una banda sea famosa y que otra no , por lo que también añadiré una lista de cantantes muy famosos colombianos al dataset también scrapeado de https://www.ranker.com/list/bands-from-colombia/reference
+\subsubsection{Bandas o cantantes famosos}
+\label{sec:org14f8a5f}
+Con el fin del proyecto, una de las cosas que se busca analizar es que factores hacen que una banda sea famosa y que otra no , por lo que también añadiré una lista de cantantes muy famosos colombianos al dataset también scrapeado de \url{https://www.ranker.com/list/bands-from-colombia/reference}
 
-*nota:el script que scrapeo estos datos está en el repositorio pero no se puede llamar desde el notebook pues es un poco mañoso*
+\textbf{nota:el script que scrapeo estos datos está en el repositorio pero no se puede llamar desde el notebook pues es un poco mañoso}
 
-#+begin_src python :results output :exports both :session simus
+\begin{verbatim}
 import json
 import pandas as pd
 with open("famous_data.json") as file:
     data = json.load(file)
 famous_dataframe = pd.DataFrame(data)
 print(famous_dataframe)
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-#+begin_example
+\begin{verbatim}
                       name
 0                  Shakira
 1                   Juanes
@@ -139,11 +172,12 @@ print(famous_dataframe)
 104  David Escobar Gallego
 
 [105 rows x 1 columns]
-#+end_example
+\end{verbatim}
 
-*** Sin embargo, lo que se pretende con estos datos es extraer solamente los nombres de las bandas activas en la escena colombiana, pues, posteriormente, a partir de estas bandas se obtendrá la información de spotify, por lo que unificaré los datos.
+\subsubsection{Sin embargo, lo que se pretende con estos datos es extraer solamente los nombres de las bandas activas en la escena colombiana, pues, posteriormente, a partir de estas bandas se obtendrá la información de spotify, por lo que unificaré los datos.}
+\label{sec:org0d35cac}
 
-#+begin_src python :results output :exports both :session simus
+\begin{verbatim}
 import pandas as pd
 
 colombia_scene_list = []
@@ -165,10 +199,9 @@ for i in datos_simus["Nombre"]:
 colombia_state_names = pd.DataFrame(colombia_scene_list)
 print(colombia_state_names)
 
-#+end_src
+\end{verbatim}
 
-#+RESULTS:
-#+begin_example
+\begin{verbatim}
                                                    name    font
 0                                               Shakira  famous
 1                                                Juanes  famous
@@ -183,6 +216,8 @@ print(colombia_state_names)
 1243                                       Mar a fuera    simus
 
 [1244 rows x 2 columns]
-#+end_example
+\end{verbatim}
 
-** Merge con Spotify:
+\subsection{Merge con Spotify:}
+\label{sec:org9023061}
+\end{document}

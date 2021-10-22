@@ -15,10 +15,13 @@ for i in range(1,142):
         print(name)
         data = {"name":name}
         names.append(data)
-    except:
+    except Exception as e:
+        print(e)
         pass
 
+print(names)
 with open("famous_data.json" , "w") as file:
-    json.dump(data, file)
+    json.dump(names, file)
+driver.close()
 
 
