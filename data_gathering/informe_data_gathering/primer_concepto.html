@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-10-22 Fri 15:10 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana</title>
+<meta name="author" content="Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán." />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org247b1c8">1. Qué base de datos escogieron.</a>
+<ul>
+<li><a href="#org4d9d1be">1.1. Metodología de la recolección de datos sobre bandas en la escena colombiana</a>
+<ul>
+<li><a href="#org9f9ae55">1.1.1. SIMUS</a></li>
+<li><a href="#orgcdf1018">1.1.2. BOMM (Bogotá Music Market)</a></li>
+<li><a href="#orgf2e9690">1.1.3. Bandas o cantantes famosos</a></li>
+<li><a href="#org565a6dc">1.1.4. Sin embargo, lo que se pretende con estos datos es extraer solamente los nombres de las bandas activas en la escena colombiana, pues, posteriormente, a partir de estas bandas se obtendrá la información de spotify, por lo que unificaré los datos.</a></li>
+</ul>
+</li>
+<li><a href="#org10b9772">1.2. Merge con Spotify:</a>
+<ul>
+<li><a href="#org816b6f5">1.2.1. Concepto</a></li>
+<li><a href="#orgf790ba0">1.2.2. Proceso de enriquecer los datos:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org482fe9d">2. Razón por la cuál elegimos esta base de datos:</a>
+<ul>
+<li><a href="#orgd32f92e">2.1. 1</a></li>
+<li><a href="#orgb7eeaf6">2.2. 2</a></li>
+<li><a href="#org1d4f98d">2.3. 3</a></li>
+</ul>
+</li>
+<li><a href="#orgbb9984b">3. Qué métodos pueden potencialmente aplicarse con dicha base de datos.</a>
+<ul>
+<li><a href="#orgf263654">3.1. Respecto a la comparación:</a></li>
+<li><a href="#org4204764">3.2. Respecto a la clasificación:</a></li>
+<li><a href="#org986526c">3.3. Respecto al clustering:</a></li>
+<li><a href="#org09f10b4">3.4. Respecto a la reducción de dimensionalidad:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org247b1c8" class="outline-2">
+<h2 id="org247b1c8"><span class="section-number-2">1.</span> Qué base de datos escogieron.</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+La idea de este proyecto es hacer un análisis del estado de las bandas musicales
+en la escena musical colombiana, sin embargo, aunque existen muchas bases de
+datos y formas diversas
+de recolectar datos sobre música, no existe un dataset sólido sobre la música en
+Colombia que cuente con suficientes features para aplicar análisis estadístico
+de datos en ellos. La mayoría de las plataformas (como spotify) que cuentan con
+una API no dan información sobre la región en donde se encuenta un artista.
+</p>
+
+<p>
+Sin embargo, no tiene gracia hacer análisis de datos sobre grandes datasets que
+no tienen influencia sobre los miembros del grupo y sobre los cuales ya existen
+análisis muy complejos hechos por gente mas experimentada, por lo que el grupo
+se dispuso a hacer su propio dataframe de la música en Colombia.
+</p>
+</div>
+
+<div id="outline-container-org4d9d1be" class="outline-3">
+<h3 id="org4d9d1be"><span class="section-number-3">1.1.</span> Metodología de la recolección de datos sobre bandas en la escena colombiana</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org9f9ae55" class="outline-4">
+<h4 id="org9f9ae55"><span class="section-number-4">1.1.1.</span> SIMUS</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Existen diversos datos sobre bandas colombianas , por ejemplo existe una entidad que se llama el SIMUS en el cuál las bandas musicales que tienen contrataciones tienen que registratse legalmente, esta base de datos cuenta con 882 bandas que se han registrado legalmente.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+<span style="color: #dcaeea;">datos_simus</span> = pd.read_excel(<span style="color: #98be65;">"bandas_simus.xls"</span>)
+<span style="color: #51afef;">print</span>(datos_simus.head(<span style="color: #da8548; font-weight: bold;">10</span>))
+<span style="color: #51afef;">print</span>(datos_simus.shape)
+</pre>
+</div>
+
+<pre class="example" id="orgb2d7613">
+                                            Nombre                        Tipo Agrupacion      Pais  Departamento       Municipio     Estado
+0  Ensamble musical casa de la cultura San Alberto                               Conjunto  COLOMBIA         CESAR     SAN ALBERTO  Publicado
+1                 Charlie Rueda &amp; The Jazzmorgans   Agrupaciones de Música Popular Urbana  COLOMBIA     SANTANDER     BUCARAMANGA  Publicado
+2                                   Gente pescaito                               Conjunto  COLOMBIA  BOGOTÁ, D.C.    BOGOTÁ, D.C.  Publicado
+3                                        los Andes                               Conjunto  COLOMBIA         HUILA         GIGANTE  Publicado
+4                       CORO MUNICIPAL DE  MALAMBO                                   Coro  COLOMBIA     ATLÁNTICO         MALAMBO  Publicado
+5                                       CORO ATRES                                   Coro  COLOMBIA        NARIÑO         IPIALES  Publicado
+6                                      A TRES TRIO                                   Trio  COLOMBIA        NARIÑO         IPIALES  Publicado
+7                    CUERPO Y ALMA LATIN ROCK BAND  Agrupaciones de Música Popular Urbana  COLOMBIA         HUILA     SANTA MARÍA  Publicado
+8                        banda escuela 16 de julio                                  Banda  COLOMBIA       BOLÍVAR  SAN ESTANISLAO  Publicado
+9       gaita casa de la cultura de san estanislao     Agrupaciones de Música Tradicional  COLOMBIA       BOLÍVAR  SAN ESTANISLAO  Publicado
+(882, 6)
+</pre>
+
+<p>
+En esta base de datos cuenta con las columnas:
+</p>
+<ul class="org-ul">
+<li>nombre de la banda</li>
+<li>tipo de agrupación</li>
+<li>país(todas son colombianas)</li>
+<li>Departamento del país</li>
+<li>Municipio</li>
+<li>Estado de la banda</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcdf1018" class="outline-4">
+<h4 id="orgcdf1018"><span class="section-number-4">1.1.2.</span> BOMM (Bogotá Music Market)</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Existe una revista llamada BOMM es una plataforma de promoción y circulación organizada por la Cámara de Comercio de Bogotá, como parte de su programa de apoyo a las Industrias Creativas y Culturales, en esta página existe un catálogo de las bandas que han participado en eventos en el año 2021 (<a href="https://www.bogotamusicmarket.com/Artistas?year=2021">https://www.bogotamusicmarket.com/Artistas?year=2021</a>) (no existen mas años y este input es vulnerable a RCE injection por si alguien quiere decirle a los de BOMM).
+En BOMM no existe propiamente un Dataset, sin embargo, están todas los artistas inscritos, por lo que se puede hacer un simple programa que los scrapee:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">from</span> selenium <span style="color: #51afef;">import</span> webdriver
+<span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+<span style="color: #51afef;">from</span> time <span style="color: #51afef;">import</span> sleep
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">crea una session de un driver de google chrome</span>
+<span style="color: #dcaeea;">driver</span> = webdriver.Chrome()
+<span style="color: #dcaeea;">bomm_artist_url</span> = <span style="color: #98be65;">"https://www.bogotamusicmarket.com/Artistas?year=2021"</span>
+driver.get(bomm_artist_url)
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">espera 1 segundo para que el driver seguro cargue la p&#225;gina</span>
+sleep(<span style="color: #da8548; font-weight: bold;">1</span>)
+<span style="color: #dcaeea;">not_done</span> = <span style="color: #a9a1e1;">True</span>
+<span style="color: #dcaeea;">bomm_list</span> = []
+<span style="color: #51afef;">while</span>(not_done):
+    <span style="color: #5B6268;">#</span><span style="color: #5B6268;">agarro todos los nombres de una pagina espec&#237;fica</span>
+    <span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> <span style="color: #c678dd;">range</span>(<span style="color: #da8548; font-weight: bold;">1</span>,<span style="color: #da8548; font-weight: bold;">17</span>):
+        <span style="color: #5B6268;">#</span><span style="color: #5B6268;">si no se puede agarrar el elemento es porque no hay mas bandas</span>
+        <span style="color: #51afef;">try</span>:
+            <span style="color: #dcaeea;">first_artist</span> = driver.find_element_by_xpath(f<span style="color: #98be65;">"/html/body/div[1]/div/div/div/div[2]/div/div[{i}]/figure/figcaption/h4/a"</span>)
+            <span style="color: #dcaeea;">name</span> = first_artist.text
+            <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"band_name"</span>:name}
+            bomm_list.append(data)
+        <span style="color: #51afef;">except</span>:
+            <span style="color: #dcaeea;">not_done</span> = <span style="color: #a9a1e1;">False</span>
+            <span style="color: #51afef;">print</span>(<span style="color: #98be65;">"done"</span>)
+            <span style="color: #51afef;">break</span>
+    <span style="color: #51afef;">try</span>:
+        <span style="color: #5B6268;">#</span><span style="color: #5B6268;">voy a la siguiente pagina, y hago esto hasta que no haya mas artistas</span>
+        <span style="color: #dcaeea;">next_button</span> = driver.find_element_by_xpath(<span style="color: #98be65;">"/html/body/div[1]/div/div/div/div[3]/div[3]/div/a"</span>)
+        next_button.click()
+        sleep(<span style="color: #da8548; font-weight: bold;">1</span>)
+    <span style="color: #51afef;">except</span>:
+        driver.close()
+
+<span style="color: #dcaeea;">bomm_data</span> = pd.DataFrame(bomm_list)
+<span style="color: #51afef;">print</span>(bomm_data)
+<span style="color: #51afef;">print</span>(bomm_data.shape())
+</pre>
+</div>
+
+<pre class="example" id="orge2af43a">
+done
+              band_name
+0    8bm - 8bits Memory
+1         Ácido Pantera
+2          Afro Legends
+3    Agrupación Guarura
+4             Aka Rezzo
+..                  ...
+252               Yooko
+253               Zafat
+254         Zalama Crew
+255           Zatélithe
+256              Zultan
+
+[257 rows x 1 columns]
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgf2e9690" class="outline-4">
+<h4 id="orgf2e9690"><span class="section-number-4">1.1.3.</span> Bandas o cantantes famosos</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Con el fin del proyecto, una de las cosas que se busca analizar es que factores hacen que una banda sea famosa y que otra no , por lo que también añadiré una lista de cantantes muy famosos colombianos al dataset también scrapeado de <a href="https://www.ranker.com/list/bands-from-colombia/reference">https://www.ranker.com/list/bands-from-colombia/reference</a>
+</p>
+
+<p>
+<b>nota:el script que scrapeo estos datos está en el repositorio pero no se puede llamar desde el notebook pues es un poco mañoso</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> json
+<span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+<span style="color: #51afef;">with</span> <span style="color: #c678dd;">open</span>(<span style="color: #98be65;">"famous_data.json"</span>) <span style="color: #51afef;">as</span> <span style="color: #c678dd;">file</span>:
+    <span style="color: #dcaeea;">data</span> = json.load(<span style="color: #c678dd;">file</span>)
+<span style="color: #dcaeea;">famous_dataframe</span> = pd.DataFrame(data)
+<span style="color: #51afef;">print</span>(famous_dataframe)
+</pre>
+</div>
+
+<pre class="example" id="org86b91d4">
+                      name
+0                  Shakira
+1                   Juanes
+2            Mateo Camargo
+3        Alfredo Gutierrez
+4            Alex González
+..                     ...
+100     Gabriel Torregrosa
+101       Rafael Rodríguez
+102         Fredys Arrieta
+103      Alejandro Palacio
+104  David Escobar Gallego
+
+[105 rows x 1 columns]
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org565a6dc" class="outline-4">
+<h4 id="org565a6dc"><span class="section-number-4">1.1.4.</span> Sin embargo, lo que se pretende con estos datos es extraer solamente los nombres de las bandas activas en la escena colombiana, pues, posteriormente, a partir de estas bandas se obtendrá la información de spotify, por lo que unificaré los datos.</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+
+<span style="color: #dcaeea;">colombia_scene_list</span> = []
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">a&#241;ado los datos del dataframe que hice de famosos previamente</span>
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> famous_dataframe[<span style="color: #98be65;">"name"</span>]:
+    <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"name"</span>:i,
+            <span style="color: #98be65;">"lugar_extraido"</span>:<span style="color: #98be65;">"pagina_artistas_famosos"</span>}
+    colombia_scene_list.append(data)
+
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">a&#241;ado los datos del dataframe que hice de BOMM previamente</span>
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> bomm_data[<span style="color: #98be65;">"band_name"</span>]:
+    <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"name"</span>:i,
+            <span style="color: #98be65;">"lugar_extraido"</span>:<span style="color: #98be65;">"bomm"</span>}
+    colombia_scene_list.append(data)
+
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">a&#241;ado los datos que descargue del SIMUS</span>
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> datos_simus[<span style="color: #98be65;">"Nombre"</span>]:
+    <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"name"</span>:i,
+            <span style="color: #98be65;">"lugar_extraido"</span>:<span style="color: #98be65;">"simus"</span>}
+    colombia_scene_list.append(data)
+
+<span style="color: #dcaeea;">colombia_state_names</span> = pd.DataFrame(colombia_scene_list)
+<span style="color: #5B6268;">#</span>
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">guardo los datos para vincularlos posteriormente con spotify y con youtube</span>
+colombia_state_names.to_csv(<span style="color: #98be65;">"nombres_bandas_generados.csv"</span>)
+<span style="color: #51afef;">print</span>(colombia_state_names.tail(<span style="color: #da8548; font-weight: bold;">5</span>))
+</pre>
+</div>
+
+<pre class="example">
+                                                   name lugar_extraido
+1239  Semillero escuela Municipal de música de Piendamó          simus
+1240                   Chirimia del Pacifico Colombiano          simus
+1241            ESCUELA DE FORMACION MUSICAL PAEZ VIVE           simus
+1242                                   Pal' Lereo Pabla          simus
+1243                                       Mar a fuera           simus
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org10b9772" class="outline-3">
+<h3 id="org10b9772"><span class="section-number-3">1.2.</span> Merge con Spotify:</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org816b6f5" class="outline-4">
+<h4 id="org816b6f5"><span class="section-number-4">1.2.1.</span> Concepto</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Spotify cuenta con una API bastante completa que suministra mucha información
+sobre las bandas que se encuentran en esta plataforma. Ya que se tiene un
+dataset con muchos nombres de bandas que suenan en la escena de
+la música colombiana, ahora lo que busco es enriquecer los datos que tengo
+buscando los nombres de las bandas en spotify y extrayendo sus features. En un
+proyecto anterior, junto con Juan Pablo, habíamos hecho una clase que funcionaba
+dentro de la API de spotify para relacionar nombres de artistas con sus
+respectivos ids en spotify
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf790ba0" class="outline-4">
+<h4 id="orgf790ba0"><span class="section-number-4">1.2.2.</span> Proceso de enriquecer los datos:</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+previamente se almacenaron los datos en &ldquo;nombres<sub>bandas</sub><sub>generados.csv</sub>&rdquo; , lo que
+busco es asociar a cada artista con su respectivo id de spotify con el fin de
+luego poder extraer la información correspondiente a este
+</p>
+
+<p>
+<b>fue muy pesado el script que hacía el merge por lo que me tocó correrlo como un script aparte que está en el repositorio pero no se puede correr desde el documento</b>, de todas formas, los datos sobre los que se va a trabajar el proyecto son estos (aunque luego se podrían adjuntar matrices respectivas a las músicas de cada artista de ser pertinente)
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+<span style="color: #dcaeea;">final_data</span> = pd.read_csv(<span style="color: #98be65;">"final_data.csv"</span>)
+<span style="color: #51afef;">print</span>(final_data.head(<span style="color: #da8548; font-weight: bold;">4</span>))
+<span style="color: #51afef;">print</span>(final_data.columns)
+<span style="color: #51afef;">print</span>(final_data.shape)
+</pre>
+</div>
+
+<pre class="example" id="org2c63a06">
+   Unnamed: 0      name_scrapped                      id                                       link_spotify  followers  ... popularidad  nombre_en_spotify  type_of_artist           lugar_extraido index_on_last_dataset
+0           0            Shakira  &lt;built-in function id&gt;  https://open.spotify.com/artist/0EmeFodog0BfCg...   22483270  ...          85            Shakira  &lt;class 'type'&gt;  pagina_artistas_famosos                     1
+1           1             Juanes  &lt;built-in function id&gt;  https://open.spotify.com/artist/0UWZUmn7sybxMC...    3438332  ...          77             Juanes  &lt;class 'type'&gt;  pagina_artistas_famosos                     2
+2           2      Mateo Camargo  &lt;built-in function id&gt;                                    not in database          0  ...           0    not in database  &lt;class 'type'&gt;  pagina_artistas_famosos                     3
+3           3  Alfredo Gutierrez  &lt;built-in function id&gt;  https://open.spotify.com/artist/7esYnrPzQX1JWW...      77452  ...          47  Alfredo Gutierrez  &lt;class 'type'&gt;  pagina_artistas_famosos                     4
+
+[4 rows x 12 columns]
+Index(['Unnamed: 0', 'name_scrapped', 'id', 'link_spotify', 'followers',
+       'generos', 'imagenes', 'popularidad', 'nombre_en_spotify',
+       'type_of_artist', 'lugar_extraido', 'index_on_last_dataset'],
+      dtype='object')
+(1244, 12)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org482fe9d" class="outline-2">
+<h2 id="org482fe9d"><span class="section-number-2">2.</span> Razón por la cuál elegimos esta base de datos:</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgd32f92e" class="outline-3">
+<h3 id="orgd32f92e"><span class="section-number-3">2.1.</span> 1</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+porque junto con Juan Pablo nos divertimos haciendo proyectos relacionados con música ya que siempre descubrimos bandas excelentes. Además, porque tiene sentido estudiar la música que consumimos.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb7eeaf6" class="outline-3">
+<h3 id="orgb7eeaf6"><span class="section-number-3">2.2.</span> 2</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+porque el hecho de que no existan datasets sobre el tema implica que es un tema que nadie ha estudiado con rigurosidad, y este análisis le puede servir a promotores de la industria musical o a bandas de amigos que quieran tomar estrategias para aumentar su popularidad.
+</p>
+</div>
+</div>
+<div id="outline-container-org1d4f98d" class="outline-3">
+<h3 id="org1d4f98d"><span class="section-number-3">2.3.</span> 3</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+porque este proyecto puede revelar un panorama muy interesante de la música en Colombia
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbb9984b" class="outline-2">
+<h2 id="orgbb9984b"><span class="section-number-2">3.</span> Qué métodos pueden potencialmente aplicarse con dicha base de datos.</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgf263654" class="outline-3">
+<h3 id="orgf263654"><span class="section-number-3">3.1.</span> Respecto a la comparación:</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Se pueden usar métodos de comparación para ver que factores influyen en la popularidad de un artista en Colombia
+</p>
+</div>
+</div>
+<div id="outline-container-org4204764" class="outline-3">
+<h3 id="org4204764"><span class="section-number-3">3.2.</span> Respecto a la clasificación:</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Se puede intentar aplicar métodos de regresiones logísticas para saber si un artista, según sus features, va a ser popular o no
+</p>
+</div>
+</div>
+<div id="outline-container-org986526c" class="outline-3">
+<h3 id="org986526c"><span class="section-number-3">3.3.</span> Respecto al clustering:</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Se puede aplicar modelos de clustering como Kmeans para entender que tipos de bandas suenan en nuestro país
+</p>
+</div>
+</div>
+<div id="outline-container-org09f10b4" class="outline-3">
+<h3 id="org09f10b4"><span class="section-number-3">3.4.</span> Respecto a la reducción de dimensionalidad:</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+Se puede reducir la dimensión de las matrices de los mel-espectrogramas de
+canciones de los artistas para poder visualizar en un plano un panorama completo de la música
+colombiana (que en realidad es mi meta personal con este proyecto.) , con esto,
+tener una visión mas clara de como se mueve la onda musical en Bogotá.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán.</p>
+<p class="date">Created: 2021-10-22 Fri 15:10</p>
+</div>
+</body>
+</html>
