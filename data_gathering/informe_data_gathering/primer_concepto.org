@@ -1,0 +1,179 @@
+#+TITLE: Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana
+#+AUTHOR:Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán.
+
+
+* Qué base de datos escogieron.
+La idea de este proyecto es hacer un análisis del estado de las bandas musicales
+en la escena musical colombiana, sin embargo, aunque existen muchas bases de
+datos y formas diversas
+de recolectar datos sobre música, no existe un dataset sólido sobre la música en
+Colombia que cuente con suficientes features para aplicar análisis estadístico
+de datos en ellos. La mayoría de las plataformas (como spotify) que cuentan con
+una API no dan información sobre la región en donde se encuenta un artista.
+
+Sin embargo, no tiene gracia hacer análisis de datos sobre grandes datasets que
+no tienen influencia sobre los miembros del grupo y sobre los cuales ya existen
+análisis muy complejos hechos por gente mas experimentada, por lo que el grupo
+se dispuso a hacer su propio dataframe de la música en Colombia.
+
+** Metodología de la recolección de datos sobre bandas en la escena colombiana
+*** SIMUS
+Existen diversos datos sobre bandas colombianas , por ejemplo existe una entidad que se llama el SIMUS en el cuál las bandas musicales que tienen contrataciones tienen que registratse legalmente, esta base de datos cuenta con 882 bandas que se han registrado legalmente.
+#+begin_src python :results output :exports both :session simus
+import pandas as pd
+datos_simus = pd.read_excel("bandas_simus.xls")
+print(datos_simus.head(10))
+print(datos_simus.shape)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+                                            Nombre                        Tipo Agrupacion      Pais  Departamento       Municipio     Estado
+0  Ensamble musical casa de la cultura San Alberto                               Conjunto  COLOMBIA         CESAR     SAN ALBERTO  Publicado
+1                 Charlie Rueda & The Jazzmorgans   Agrupaciones de Música Popular Urbana  COLOMBIA     SANTANDER     BUCARAMANGA  Publicado
+2                                   Gente pescaito                               Conjunto  COLOMBIA  BOGOTÁ, D.C.    BOGOTÁ, D.C.  Publicado
+3                                        los Andes                               Conjunto  COLOMBIA         HUILA         GIGANTE  Publicado
+4                       CORO MUNICIPAL DE  MALAMBO                                   Coro  COLOMBIA     ATLÁNTICO         MALAMBO  Publicado
+5                                       CORO ATRES                                   Coro  COLOMBIA        NARIÑO         IPIALES  Publicado
+6                                      A TRES TRIO                                   Trio  COLOMBIA        NARIÑO         IPIALES  Publicado
+7                    CUERPO Y ALMA LATIN ROCK BAND  Agrupaciones de Música Popular Urbana  COLOMBIA         HUILA     SANTA MARÍA  Publicado
+8                        banda escuela 16 de julio                                  Banda  COLOMBIA       BOLÍVAR  SAN ESTANISLAO  Publicado
+9       gaita casa de la cultura de san estanislao     Agrupaciones de Música Tradicional  COLOMBIA       BOLÍVAR  SAN ESTANISLAO  Publicado
+(882, 6)
+#+end_example
+
+En esta base de datos cuenta con las columnas:
+- nombre de la banda
+- tipo de agrupación
+- país(todas son colombianas)
+- Departamento del país
+- Municipio
+- Estado de la banda
+*** BOMM (Bogotá Music Market)
+Existe una revista llamada BOMM es una plataforma de promoción y circulación organizada por la Cámara de Comercio de Bogotá, como parte de su programa de apoyo a las Industrias Creativas y Culturales, en esta página existe un catálogo de las bandas que han participado en eventos en el año 2021 (https://www.bogotamusicmarket.com/Artistas?year=2021) (no existen mas años y este input es vulnerable a RCE injection por si alguien quiere decirle a los de BOMM).
+En BOMM no existe propiamente un Dataset, sin embargo, están todas los artistas inscritos, por lo que se puede hacer un simple programa que los scrapee:
+#+begin_src python :results output :exports both :session simus
+from selenium import webdriver
+import pandas as pd
+from time import sleep
+#crea una session de un driver de google chrome
+driver = webdriver.Chrome()
+bomm_artist_url = "https://www.bogotamusicmarket.com/Artistas?year=2021"
+driver.get(bomm_artist_url)
+#espera 1 segundo para que el driver seguro cargue la página
+sleep(1)
+not_done = True
+bomm_list = []
+while(not_done):
+    #agarro todos los nombres de una pagina específica
+    for i in range(1,17):
+        #si no se puede agarrar el elemento es porque no hay mas bandas
+        try:
+            first_artist = driver.find_element_by_xpath(f"/html/body/div[1]/div/div/div/div[2]/div/div[{i}]/figure/figcaption/h4/a")
+            name = first_artist.text
+            data = {"band_name":name}
+            bomm_list.append(data)
+        except:
+            not_done = False
+            print("done")
+            break
+    try:
+        #voy a la siguiente pagina, y hago esto hasta que no haya mas artistas
+        next_button = driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[3]/div[3]/div/a")
+        next_button.click()
+        sleep(1)
+    except:
+        driver.close()
+
+bomm_data = pd.DataFrame(bomm_list)
+print(bomm_data)
+print(bomm_data.shape())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+done
+ya no hay click
+              band_name
+0    8bm - 8bits Memory
+1         Ácido Pantera
+2          Afro Legends
+3    Agrupación Guarura
+4             Aka Rezzo
+..                  ...
+252               Yooko
+253               Zafat
+254         Zalama Crew
+255           Zatélithe
+256              Zultan
+
+[257 rows x 1 columns]
+#+end_example
+
+*** Bandas o cantantes famosos
+Con el fin del proyecto, una de las cosas que se busca analizar es que factores hacen que una banda sea famosa y que otra no , por lo que también añadiré una lista de cantantes muy famosos colombianos al dataset también scrapeado de https://www.ranker.com/list/bands-from-colombia/reference
+
+
+#+begin_src python :results output :exports both :session simus
+from selenium import webdriver
+import pandas as pd
+from time import sleep
+from bs4 import BeautifulSoup
+
+
+driver  = webdriver.Chrome()
+driver.get("https://www.ranker.com/list/bands-from-colombia/reference")
+input("deme algo")
+content = driver.page_source
+names = []
+for i in range(1,142):
+    try:
+        name = driver.find_element_by_xpath(f"/html/body/div[1]/article/div[3]/div[1]/ul/li[{i}]/div/div/div/h2/a").text
+        data = {"name":name}
+        names.append(data)
+    except:
+        pass
+
+famous_data = pd.DataFrame(names)
+print(famous_data)
+
+#+end_src
+
+
+
+*** Sin embargo, lo que se pretende con estos datos es extraer solamente los nombres de las bandas activas en la escena colombiana, pues, posteriormente, a partir de estas bandas se obtendrá la información de spotify, por lo que unificaré los datos.
+
+#+begin_src python :results output :exports both :session simus
+colombia_scene_list = [] #esto se podría hacer 10 veces mas elegante, pendiente a refactorizar.
+for i in datos_simus["Nombre"]:
+    dato = {"nombre": i
+            "fuente":"simus"}
+    colombia_scene_list.append(dato)
+
+for i in bomm_data["band_name"]:
+    dato = {"nombre": i,
+            "fuente":"bomm"}
+    colombia_scene_list.append(dato)
+colombia_scene_names_dataframe = pd.DataFrame(colombia_scene_list)
+print(colombia_scene_names_dataframe)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+                                               nombre
+0     Ensamble musical casa de la cultura San Alberto
+1                    Charlie Rueda & The Jazzmorgans
+2                                      Gente pescaito
+3                                           los Andes
+4                          CORO MUNICIPAL DE  MALAMBO
+...                                               ...
+1134                                            Yooko
+1135                                            Zafat
+1136                                      Zalama Crew
+1137                                        Zatélithe
+1138                                           Zultan
+
+[1139 rows x 1 columns]
+#+end_example
+
+Yo creo que con estos datos ya se puede trabajar, si es necesario mas, puedo conseguir mas fuentes de bandas musicales en la escena colombiana.
