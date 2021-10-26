@@ -1,4 +1,4 @@
-from youtubesearchpython import VideosSearch
+from youtubesearchpython import *
 import json
 import pandas as pd
 from time import sleep
@@ -9,7 +9,16 @@ from sklearn.decomposition import PCA
 
 #este metodo descarga una lista de canciones desde youtube
 def descargar_canciones_desde_nombre_youtube(artist_name):
+    alfabeto = [chr(i) for i in range(ord("A") , ord("Z")+1)]
+    alfabeto += [chr(i) for i in range(ord("a") , ord("z")+1)]
     original_name = artist_name
+    new_artist_name = ""
+    #hago este swap para no tener problemas con caracteres ascii
+    for i in artist_name:
+        if(i in alfabeto):
+            new_artist_name += i
+    artist_name = new_artist_name
+    print(artist_name)
     urls = grab_10_songs(original_name)
     if(len(urls)>=1):
         try:
@@ -27,7 +36,7 @@ def descargar_canciones_desde_nombre_youtube(artist_name):
 
 #este metodo hay que dejarlo asi como está pero hay que cambiar que no se puedan descargar canciones de mas de 10 minutos
 def grab_10_songs(artist_name):
-    videosSearch = VideosSearch(artist_name, limit = 2) #ACA SE DECIDE LA CANTIDAD DE CANCIONES POR ARTISTA
+    videosSearch = CustomSearch(artist_name, VideoSortOrder.viewCount ,  limit = 2) #ACA SE DECIDE LA CANTIDAD DE CANCIONES POR ARTISTA
     result = videosSearch.result()
     urls = []
     for i in result["result"]:
@@ -137,5 +146,5 @@ def agarrar_toda_la_lista(datos):
 
 
 datos = agarrar_toda_la_lista("final_data.csv")
-#with open("vectores_artistas.json" , "w") as file:
-#    json.dump(datos , file)
+with open("vectores_artistas.json" , "w") as file:
+    json.dump(datos , file)
