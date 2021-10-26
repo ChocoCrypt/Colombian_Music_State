@@ -120,6 +120,7 @@ def resume_10_songs_by_an_artist(artist_name):
                 "x1":str(0),
                 "x2":str(0)
                 }
+        return(info)
 
 
 def agarrar_toda_la_lista(datos):
