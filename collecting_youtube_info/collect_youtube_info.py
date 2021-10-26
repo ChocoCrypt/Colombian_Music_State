@@ -6,28 +6,64 @@ import os
 import librosa
 from sklearn.decomposition import PCA
 
+
+#este metodo descarga una lista de canciones desde youtube
+def descargar_canciones_desde_nombre_youtube(artist_name):
+    original_name = artist_name
+    urls = grab_10_songs(original_name)
+    if(len(urls)>=1):
+        try:
+            dest_folder = os.makedirs(f"artists/{artist_name}")
+        except:
+            print(f"folder for {artist_name} already exists")
+        index = 1
+        for i in urls:
+            print(f"downloading {index} for {original_name}")
+            os.system(f'youtube-dl -x -i --audio-format mp3 {i} --output   "artists/{artist_name}/{artist_name}{index}.%(mp3)s"   ')
+            index += 1
+    else:
+        print("no hubo canciones")
+
+
+#este metodo hay que dejarlo asi como está pero hay que cambiar que no se puedan descargar canciones de mas de 10 minutos
 def grab_10_songs(artist_name):
     videosSearch = VideosSearch(artist_name, limit = 1) #ACA SE DECIDE LA CANTIDAD DE CANCIONES POR ARTISTA
     result = videosSearch.result()
     urls = []
     for i in result["result"]:
         ide = i["id"]
-        url = f"https://www.youtube.com/watch?v={ide}"
-        urls.append(url)
+        duracion = i["duration"]
+        duracion_lista = duracion.split(":")
+        segundos = 0
+        try:
+            segundos += int(duracion_lista[-1])
+        except:
+            segundos += 0
+        try:
+            segundos += int(duracion_lista[-2])*60
+        except:
+            segundos += 0
+        try:
+            segundos += int(duracion_lista[-3])*3600
+        except:
+            segundos += 0
+        print(segundos)
+        if(segundos < 600):
+            url = f"https://www.youtube.com/watch?v={ide}"
+            urls.append(url)
+        else:
+            print("la cancion es muy larga")
     return(urls)
 
 
 def get_resume_of_file(filepath):
  #reading files with librosa
     samples,sampling_rate = librosa.load(filepath)
-
     #creating spectrogram
     sgram = librosa.stft(samples)
-
     #generating mel spectrogram
     sgram_mag , _ = librosa.magphase(sgram)
     mel_scale_sgram = librosa.feature.melspectrogram(S=sgram_mag , sr = sampling_rate)
-
     #re scaling mel pectrograms with PCA
     pca = PCA(n_components = 2)#    IMPORTANTE QUE ACA SE DECIDE CUANTOS VECTORES VAMOS A TENER
     pca.fit(mel_scale_sgram)
@@ -63,32 +99,33 @@ def resume_10_songs_by_an_artist(artist_name):
             new_artist_name += i
     artist_name = new_artist_name
     print(artist_name)
-    urls = grab_10_songs(original_name)
+    #esto que está aca hay que reemplazarlo un metodo que descargue directamente las canciones desde spotify, si no, ahi si de youtube
+    descargar_canciones_desde_nombre_youtube(original_name)
+    #hay que hacer un try porque puede no haber canciones
     try:
-        dest_folder = os.makedirs(f"artists/{artist_name}")
+        resume_folder_into_one_single_file(f"artists/{artist_name}", f"{artist_name}_unified")
+        valores = get_resume_of_file(f"artists/{artist_name}/{artist_name}_unified.mp3")
+        #esto toca esperar antes de borrar porque si no el system se corre paralelo con el os.remove
+        #toca borrarlos con el system
+        sleep(1)
+        os.system(f"rm artists/{artist_name}/{artist_name}_unified.mp3") #ACA BORRO LAS CANCIONES PARA PODERLO CORRER EN MI SERVIDOR
+        os.system(f"rm -r artists/{artist_name}") #ACA BORRO LA CARPETA PARA NO HACER SPAM
+        info = {"artist":original_name,
+                "x1":str(valores[0]),
+                "x2":str(valores[1])}
+        return(info)
+    #esto puede pasar si no habia canciones
     except:
-        print(f"folder for {artist_name} already exists")
-    index = 1
-    for i in urls:
-        print(f"downloading {index} for {original_name}")
-        os.system(f'youtube-dl -x -i --audio-format mp3 {i} --output   "artists/{artist_name}/{artist_name}{index}.%(mp3)s"   ')
-        index += 1
-    resume_folder_into_one_single_file(f"artists/{artist_name}", f"{artist_name}_unified")
-    valores = get_resume_of_file(f"artists/{artist_name}/{artist_name}_unified.mp3")
-    #esto toca esperar antes de borrar porque si no el system se corre paralelo con el os.remove
-    #toca borrarlos con el system
-    sleep(1)
-    os.system(f"rm artists/{artist_name}/{artist_name}_unified.mp3") #ACA BORRO LAS CANCIONES PARA PODERLO CORRER EN MI SERVIDOR
-    os.system(f"rm -r artists/{artist_name}") #ACA BORRO LA CARPETA PARA NO HACER SPAM
-    info = {"artist":original_name,
-            "x1":str(valores[0]),
-            "x2":str(valores[1])}
-    return(info)
+        info = {"artist_name":original_name,
+                "x1":str(0),
+                "x2":str(0)
+                }
+
 
 def agarrar_toda_la_lista(datos):
     data = pd.read_csv(datos)
     total_data = []
-    for i in data["name_scrapped"][1:10]:
+    for i in data["name_scrapped"][0:2]:
         info = resume_10_songs_by_an_artist(i)
         total_data.append(info)
         #hay que poner este sleep para que sigan corriendo los siguientes
@@ -99,6 +136,5 @@ def agarrar_toda_la_lista(datos):
 
 
 datos = agarrar_toda_la_lista("final_data.csv")
-with open("vectores_artistas.json" , "w") as file:
-    json.dump(datos , file)
-
+#with open("vectores_artistas.json" , "w") as file:
+#    json.dump(datos , file)
