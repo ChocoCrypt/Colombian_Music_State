@@ -7,7 +7,7 @@ import librosa
 from sklearn.decomposition import PCA
 
 def grab_10_songs(artist_name):
-    videosSearch = VideosSearch(artist_name, limit = 5) #ACA SE DECIDE LA CANTIDAD DE CANCIONES POR ARTISTA
+    videosSearch = VideosSearch(artist_name, limit = 1) #ACA SE DECIDE LA CANTIDAD DE CANCIONES POR ARTISTA
     result = videosSearch.result()
     urls = []
     for i in result["result"]:
@@ -81,7 +81,7 @@ def resume_10_songs_by_an_artist(artist_name):
     sleep(1)
     os.system(f"rm artists/{artist_name}/{artist_name}_unified.mp3") #ACA BORRO LAS CANCIONES PARA PODERLO CORRER EN MI SERVIDOR
     os.system(f"rm -r artists/{artist_name}") #ACA BORRO LA CARPETA PARA NO HACER SPAM
-    info = {"artist":artist_name,
+    info = {"artist":original_name,
             "x1":str(valores[0]),
             "x2":str(valores[1])}
     return(info)
@@ -89,7 +89,7 @@ def resume_10_songs_by_an_artist(artist_name):
 def agarrar_toda_la_lista(datos):
     data = pd.read_csv(datos)
     total_data = []
-    for i in data["name_scrapped"]:
+    for i in data["name_scrapped"][1:10]:
         info = resume_10_songs_by_an_artist(i)
         total_data.append(info)
         #hay que poner este sleep para que sigan corriendo los siguientes
