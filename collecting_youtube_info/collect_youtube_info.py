@@ -17,7 +17,6 @@ def grab_10_songs(artist_name):
     return(urls)
 
 
-
 def get_resume_of_file(filepath):
  #reading files with librosa
     samples,sampling_rate = librosa.load(filepath)
@@ -102,10 +101,4 @@ def agarrar_toda_la_lista(datos):
 datos = agarrar_toda_la_lista("final_data.csv")
 with open("vectores_artistas.json" , "w") as file:
     json.dump(datos , file)
-
-
-
-
-
-
 
