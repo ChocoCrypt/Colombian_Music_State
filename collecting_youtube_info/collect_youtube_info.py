@@ -125,7 +125,7 @@ def resume_10_songs_by_an_artist(artist_name):
 def agarrar_toda_la_lista(datos):
     data = pd.read_csv(datos)
     total_data = []
-    for i in data["name_scrapped"][0:2]:
+    for i in data["name_scrapped"]:
         info = resume_10_songs_by_an_artist(i)
         total_data.append(info)
         #hay que poner este sleep para que sigan corriendo los siguientes
