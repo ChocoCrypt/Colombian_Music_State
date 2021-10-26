@@ -36,7 +36,7 @@ def descargar_canciones_desde_nombre_youtube(artist_name):
 
 #este metodo hay que dejarlo asi como está pero hay que cambiar que no se puedan descargar canciones de mas de 10 minutos
 def grab_10_songs(artist_name):
-    videosSearch = CustomSearch(artist_name, VideoSortOrder.viewCount ,  limit = 2) #ACA SE DECIDE LA CANTIDAD DE CANCIONES POR ARTISTA
+    videosSearch = CustomSearch(artist_name, VideoSortOrder.viewCount ,  limit = 1) #ACA SE DECIDE LA CANTIDAD DE CANCIONES POR ARTISTA
     result = videosSearch.result()
     urls = []
     for i in result["result"]:
