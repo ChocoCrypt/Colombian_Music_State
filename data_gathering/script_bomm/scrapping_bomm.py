@@ -21,6 +21,7 @@ while(not_done):
             name = first_artist.text
             data = {"band_name":name}
             bomm_list.append(data)
+            print(name)
         except:
             not_done = False
             print("done")

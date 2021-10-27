@@ -14,7 +14,7 @@ def descargar_canciones_desde_nombre_youtube(artist_name):
     original_name = artist_name
     new_artist_name = ""
     #hago este swap para no tener problemas con caracteres ascii
-    for i in artist_name:
+    for i in str(artist_name):
         if(i in alfabeto):
             new_artist_name += i
     artist_name = new_artist_name
@@ -36,33 +36,36 @@ def descargar_canciones_desde_nombre_youtube(artist_name):
 
 #este metodo hay que dejarlo asi como está pero hay que cambiar que no se puedan descargar canciones de mas de 10 minutos
 def grab_10_songs(artist_name):
-    videosSearch = CustomSearch(artist_name, VideoSortOrder.viewCount ,  limit = 1) #ACA SE DECIDE LA CANTIDAD DE CANCIONES POR ARTISTA
-    result = videosSearch.result()
-    urls = []
-    for i in result["result"]:
-        ide = i["id"]
-        duracion = i["duration"]
-        duracion_lista = duracion.split(":")
-        segundos = 0
-        try:
-            segundos += int(duracion_lista[-1])
-        except:
-            segundos += 0
-        try:
-            segundos += int(duracion_lista[-2])*60
-        except:
-            segundos += 0
-        try:
-            segundos += int(duracion_lista[-3])*3600
-        except:
-            segundos += 0
-        print(segundos)
-        if(segundos < 600):
-            url = f"https://www.youtube.com/watch?v={ide}"
-            urls.append(url)
-        else:
-            print("la cancion es muy larga")
-    return(urls)
+    try:
+        videosSearch = CustomSearch(artist_name, VideoSortOrder.viewCount ,  limit = 1) #ACA SE DECIDE LA CANTIDAD DE CANCIONES POR ARTISTA
+        result = videosSearch.result()
+        urls = []
+        for i in result["result"]:
+            ide = i["id"]
+            duracion = i["duration"]
+            duracion_lista = duracion.split(":")
+            segundos = 0
+            try:
+                segundos += int(duracion_lista[-1])
+            except:
+                segundos += 0
+            try:
+                segundos += int(duracion_lista[-2])*60
+            except:
+                segundos += 0
+            try:
+                segundos += int(duracion_lista[-3])*3600
+            except:
+                segundos += 0
+            print(segundos)
+            if(segundos < 600):
+                url = f"https://www.youtube.com/watch?v={ide}"
+                urls.append(url)
+            else:
+                print("la cancion es muy larga")
+        return(urls)
+    except:
+        return([])
 
 
 def get_resume_of_file(filepath):
@@ -103,7 +106,7 @@ def resume_10_songs_by_an_artist(artist_name):
     original_name = artist_name
     new_artist_name = ""
     #hago este swap para no tener problemas con caracteres ascii
-    for i in artist_name:
+    for i in str(artist_name):
         if(i in alfabeto):
             new_artist_name += i
     artist_name = new_artist_name
