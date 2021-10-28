@@ -69,7 +69,7 @@ def grab_10_songs(artist_name):
         return([])
 
 
-def get_resume_of_file(filepath):
+def get_resume_of_file(filepath , k_values):
  #reading files with librosa
     samples,sampling_rate = librosa.load(filepath)
     #creating spectrogram
@@ -78,7 +78,7 @@ def get_resume_of_file(filepath):
     sgram_mag , _ = librosa.magphase(sgram)
     mel_scale_sgram = librosa.feature.melspectrogram(S=sgram_mag , sr = sampling_rate)
     #re scaling mel pectrograms with PCA
-    pca = PCA(n_components = 2)#    IMPORTANTE QUE ACA SE DECIDE CUANTOS VECTORES VAMOS A TENER
+    pca = PCA(n_components = k_values)#    IMPORTANTE QUE ACA SE DECIDE CUANTOS VECTORES VAMOS A TENER
     pca.fit(mel_scale_sgram)
     values = pca.singular_values_
     print(values)
@@ -117,7 +117,9 @@ def resume_10_songs_by_an_artist(artist_name):
     #hay que hacer un try porque puede no haber canciones
     try:
         resume_folder_into_one_single_file(f"artists/{artist_name}", f"{artist_name}_unified")
-        valores = get_resume_of_file(f"artists/{artist_name}/{artist_name}_unified.mp3")
+        valores = get_resume_of_file(f"artists/{artist_name}/{artist_name}_unified.mp3" , 2)
+        song_descriptor = get_resume_of_file(f"artists/{artist_name}/{artist_name}_unified.mp3" , 1)
+        print(song_descriptor)
         #esto toca esperar antes de borrar porque si no el system se corre paralelo con el os.remove
         #toca borrarlos con el system
         sleep(1)
@@ -131,7 +133,8 @@ def resume_10_songs_by_an_artist(artist_name):
     except:
         info = {"artist_name":original_name,
                 "x1":str(0),
-                "x2":str(0)
+                "x2":str(0),
+                "song_descriptor":song_descriptor
                 }
         return(info)
 
