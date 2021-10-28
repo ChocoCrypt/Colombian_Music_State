@@ -106,6 +106,7 @@ def resume_10_songs_by_an_artist(artist_name):
     alfabeto += [chr(i) for i in range(ord("a") , ord("z")+1)]
     original_name = artist_name
     new_artist_name = ""
+    descriptive_range = 128
     #hago este swap para no tener problemas con caracteres ascii
     for i in str(artist_name):
         if(i in alfabeto):
@@ -120,29 +121,39 @@ def resume_10_songs_by_an_artist(artist_name):
         valores = get_resume_of_file(f"artists/{artist_name}/{artist_name}_unified.mp3" , 2)
         song_descriptor = get_resume_of_file(f"artists/{artist_name}/{artist_name}_unified.mp3" , 1)
         print(song_descriptor)
+        descriptive_values = get_resume_of_file(f"artists/{artist_name}/{artist_name}_unified.mp3" , descriptive_range)
+        print(descriptive_values)
         #esto toca esperar antes de borrar porque si no el system se corre paralelo con el os.remove
         #toca borrarlos con el system
         sleep(1)
         os.system(f"rm artists/{artist_name}/{artist_name}_unified.mp3") #ACA BORRO LAS CANCIONES PARA PODERLO CORRER EN MI SERVIDOR
-        os.system(f"rm -rf artists/*") #ACA BORRO LA CARPETA PARA NO HACER SPAM
+        #os.system(f"rm -rf artists/*") #ACA BORRO LA CARPETA PARA NO HACER SPAM
         info = {"artist":original_name,
-                "x1":str(valores[0]),
-                "x2":str(valores[1])}
+                "song_descriptor":song_descriptor[0],
+                "x1_graphics":str(valores[0]),
+                "x2_graphics":str(valores[1])
+                }
+        for i in range(len(descriptive_values)):#descriptive_range
+            info[f"x{i}_descriptive"] = str(descriptive_values[i])
+        #print(info)
         return(info)
     #esto puede pasar si no habia canciones
-    except:
+    except Exception as e:
+        print("error , no habia canciones",e)
         info = {"artist_name":original_name,
-                "x1":str(0),
-                "x2":str(0),
-                "song_descriptor":song_descriptor
+                "song_descriptor":0,
+                "x1_graphics":str(0),
+                "x2_graphics":str(0)
                 }
+        for i in range(descriptive_range):
+            info[f"x{i}_descriptive"] = str(0)
         return(info)
 
 
 def agarrar_toda_la_lista(datos):
     data = pd.read_csv(datos)
     total_data = []
-    for i in tqdm(data["name_scrapped"]):
+    for i in tqdm(data["name_scrapped"][0:5]): #ACA LO PUSE SOLO % PARA VER DATOS DE PRUEBA
         info = resume_10_songs_by_an_artist(i)
         total_data.append(info)
         #hay que poner este sleep para que sigan corriendo los siguientes
@@ -153,5 +164,5 @@ def agarrar_toda_la_lista(datos):
 
 
 datos = agarrar_toda_la_lista("final_data.csv")
-with open("vectores_artistas.json" , "w") as file:
-    json.dump(datos , file)
+data = pd.DataFrame(datos)
+data.to_csv("artistas_con_vectores.csv")
