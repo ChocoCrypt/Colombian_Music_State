@@ -1,0 +1,1708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-10-28 Thu 11:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana</title>
+<meta name="author" content="Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán." />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Primer Concepto -Análisis del estado de las bandas musicales en la escena colombiana</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org70d3803">1. Qué base de datos escogieron.</a>
+<ul>
+<li><a href="#orgd58c56d">1.1. Metodología de la recolección de datos sobre bandas en la escena colombiana</a>
+<ul>
+<li><a href="#org0416841">1.1.1. SIMUS</a></li>
+<li><a href="#org9f3b325">1.1.2. BOMM (Bogotá Music Market)</a></li>
+<li><a href="#orgfc97de0">1.1.3. Bandas de circulart:</a></li>
+<li><a href="#orgaeda04e">1.1.4. LastFM bands</a></li>
+<li><a href="#org178d7c5">1.1.5. Bandas o cantantes famosos</a></li>
+<li><a href="#orgbb0c7f8">1.1.6. Sin embargo, lo que se pretende con estos datos es extraer solamente los nombres de las bandas activas en la escena colombiana, pues, posteriormente, a partir de estas bandas se obtendrá la información de spotify, por lo que unificaré los datos.</a></li>
+</ul>
+</li>
+<li><a href="#orge989039">1.2. Merge con Spotify:</a>
+<ul>
+<li><a href="#orgfe2064c">1.2.1. Concepto</a></li>
+<li><a href="#org4716872">1.2.2. Proceso de enriquecer los datos:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga3db10c">2. Razón por la cuál elegimos esta base de datos:</a>
+<ul>
+<li><a href="#org6af18d5">2.1. 1</a></li>
+<li><a href="#org9b69a57">2.2. 2</a></li>
+<li><a href="#org186e4c2">2.3. 3</a></li>
+</ul>
+</li>
+<li><a href="#orga212e40">3. Qué métodos pueden potencialmente aplicarse con dicha base de datos.</a>
+<ul>
+<li><a href="#org4ba3417">3.1. Respecto a la comparación:</a></li>
+<li><a href="#org54cf121">3.2. Respecto a la clasificación:</a></li>
+<li><a href="#org3a2d848">3.3. Respecto al clustering:</a></li>
+<li><a href="#org602f6ea">3.4. Respecto a la reducción de dimensionalidad:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org70d3803" class="outline-2">
+<h2 id="org70d3803"><span class="section-number-2">1.</span> Qué base de datos escogieron.</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+La idea de este proyecto es hacer un análisis del estado de las bandas musicales
+en la escena musical colombiana, sin embargo, aunque existen muchas bases de
+datos y formas diversas
+de recolectar datos sobre música, no existe un dataset sólido sobre la música en
+Colombia que cuente con suficientes features para aplicar análisis estadístico
+de datos en ellos. La mayoría de las plataformas (como spotify) que cuentan con
+una API no dan información sobre la región en donde se encuenta un artista.
+</p>
+
+<p>
+Sin embargo, no tiene gracia hacer análisis de datos sobre grandes datasets que
+no tienen influencia sobre los miembros del grupo y sobre los cuales ya existen
+análisis muy complejos hechos por gente mas experimentada, por lo que el grupo
+se dispuso a hacer su propio dataframe de la música en Colombia.
+</p>
+</div>
+
+<div id="outline-container-orgd58c56d" class="outline-3">
+<h3 id="orgd58c56d"><span class="section-number-3">1.1.</span> Metodología de la recolección de datos sobre bandas en la escena colombiana</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org0416841" class="outline-4">
+<h4 id="org0416841"><span class="section-number-4">1.1.1.</span> SIMUS</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Existen diversos datos sobre bandas colombianas , por ejemplo existe una entidad que se llama el SIMUS en el cuál las bandas musicales que tienen contrataciones tienen que registratse legalmente, esta base de datos cuenta con 882 bandas que se han registrado legalmente.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+<span style="color: #dcaeea;">datos_simus</span> = pd.read_excel(<span style="color: #98be65;">"bandas_simus.xls"</span>)
+<span style="color: #51afef;">print</span>(datos_simus.head(<span style="color: #da8548; font-weight: bold;">10</span>))
+<span style="color: #51afef;">print</span>(datos_simus.shape)
+</pre>
+</div>
+
+<pre class="example" id="orgfc1eccd">
+                                            Nombre                        Tipo Agrupacion      Pais  Departamento       Municipio     Estado
+0  Ensamble musical casa de la cultura San Alberto                               Conjunto  COLOMBIA         CESAR     SAN ALBERTO  Publicado
+1                 Charlie Rueda &amp; The Jazzmorgans   Agrupaciones de Música Popular Urbana  COLOMBIA     SANTANDER     BUCARAMANGA  Publicado
+2                                   Gente pescaito                               Conjunto  COLOMBIA  BOGOTÁ, D.C.    BOGOTÁ, D.C.  Publicado
+3                                        los Andes                               Conjunto  COLOMBIA         HUILA         GIGANTE  Publicado
+4                       CORO MUNICIPAL DE  MALAMBO                                   Coro  COLOMBIA     ATLÁNTICO         MALAMBO  Publicado
+5                                       CORO ATRES                                   Coro  COLOMBIA        NARIÑO         IPIALES  Publicado
+6                                      A TRES TRIO                                   Trio  COLOMBIA        NARIÑO         IPIALES  Publicado
+7                    CUERPO Y ALMA LATIN ROCK BAND  Agrupaciones de Música Popular Urbana  COLOMBIA         HUILA     SANTA MARÍA  Publicado
+8                        banda escuela 16 de julio                                  Banda  COLOMBIA       BOLÍVAR  SAN ESTANISLAO  Publicado
+9       gaita casa de la cultura de san estanislao     Agrupaciones de Música Tradicional  COLOMBIA       BOLÍVAR  SAN ESTANISLAO  Publicado
+(882, 6)
+</pre>
+
+<p>
+En esta base de datos cuenta con las columnas:
+</p>
+<ul class="org-ul">
+<li>nombre de la banda</li>
+<li>tipo de agrupación</li>
+<li>país(todas son colombianas)</li>
+<li>Departamento del país</li>
+<li>Municipio</li>
+<li>Estado de la banda</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9f3b325" class="outline-4">
+<h4 id="org9f3b325"><span class="section-number-4">1.1.2.</span> BOMM (Bogotá Music Market)</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Existe una revista llamada BOMM es una plataforma de promoción y circulación organizada por la Cámara de Comercio de Bogotá, como parte de su programa de apoyo a las Industrias Creativas y Culturales, en esta página existe un catálogo de las bandas que han participado en eventos en el año 2021 (<a href="https://www.bogotamusicmarket.com/Artistas?year=2021">https://www.bogotamusicmarket.com/Artistas?year=2021</a>) (no existen mas años y este input es vulnerable a RCE injection por si alguien quiere decirle a los de BOMM).
+En BOMM no existe propiamente un Dataset, sin embargo, están todas los artistas inscritos, por lo que se puede hacer un simple programa que los scrapee:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">from</span> selenium <span style="color: #51afef;">import</span> webdriver
+<span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+<span style="color: #51afef;">from</span> time <span style="color: #51afef;">import</span> sleep
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">crea una session de un driver de google chrome</span>
+<span style="color: #dcaeea;">driver</span> = webdriver.Chrome()
+<span style="color: #dcaeea;">bomm_artist_url</span> = <span style="color: #98be65;">"https://www.bogotamusicmarket.com/Artistas?year=2021"</span>
+driver.get(bomm_artist_url)
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">espera 1 segundo para que el driver seguro cargue la p&#225;gina</span>
+sleep(<span style="color: #da8548; font-weight: bold;">1</span>)
+<span style="color: #dcaeea;">not_done</span> = <span style="color: #a9a1e1;">True</span>
+<span style="color: #dcaeea;">bomm_list</span> = []
+<span style="color: #51afef;">while</span>(not_done):
+    <span style="color: #5B6268;">#</span><span style="color: #5B6268;">agarro todos los nombres de una pagina espec&#237;fica</span>
+    <span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> <span style="color: #c678dd;">range</span>(<span style="color: #da8548; font-weight: bold;">1</span>,<span style="color: #da8548; font-weight: bold;">17</span>):
+        <span style="color: #5B6268;">#</span><span style="color: #5B6268;">si no se puede agarrar el elemento es porque no hay mas bandas</span>
+        <span style="color: #51afef;">try</span>:
+            <span style="color: #dcaeea;">first_artist</span> = driver.find_element_by_xpath(f<span style="color: #98be65;">"/html/body/div[1]/div/div/div/div[2]/div/div[{i}]/figure/figcaption/h4/a"</span>)
+            <span style="color: #dcaeea;">name</span> = first_artist.text
+            <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"band_name"</span>:name}
+            bomm_list.append(data)
+        <span style="color: #51afef;">except</span>:
+            <span style="color: #dcaeea;">not_done</span> = <span style="color: #a9a1e1;">False</span>
+            <span style="color: #51afef;">print</span>(<span style="color: #98be65;">"done"</span>)
+            <span style="color: #51afef;">break</span>
+    <span style="color: #51afef;">try</span>:
+        <span style="color: #5B6268;">#</span><span style="color: #5B6268;">voy a la siguiente pagina, y hago esto hasta que no haya mas artistas</span>
+        <span style="color: #dcaeea;">next_button</span> = driver.find_element_by_xpath(<span style="color: #98be65;">"/html/body/div[1]/div/div/div/div[3]/div[3]/div/a"</span>)
+        next_button.click()
+        sleep(<span style="color: #da8548; font-weight: bold;">1</span>)
+    <span style="color: #51afef;">except</span>:
+        driver.close()
+
+<span style="color: #dcaeea;">bomm_data</span> = pd.DataFrame(bomm_list)
+<span style="color: #51afef;">print</span>(bomm_data)
+<span style="color: #51afef;">print</span>(bomm_data.shape())
+</pre>
+</div>
+
+<pre class="example" id="orgf31989f">
+done
+              band_name
+0    8bm - 8bits Memory
+1         Ácido Pantera
+2          Afro Legends
+3    Agrupación Guarura
+4             Aka Rezzo
+..                  ...
+252               Yooko
+253               Zafat
+254         Zalama Crew
+255           Zatélithe
+256              Zultan
+
+[257 rows x 1 columns]
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgfc97de0" class="outline-4">
+<h4 id="orgfc97de0"><span class="section-number-4">1.1.3.</span> Bandas de circulart:</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Así como existe Bomm en Bogotá, existe Circulart en Medellín, acá adjunto el script que scrappea los datos de circulart
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">from</span> selenium <span style="color: #51afef;">import</span> webdriver
+<span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+<span style="color: #51afef;">from</span> time <span style="color: #51afef;">import</span> sleep
+
+<span style="color: #dcaeea;">link</span> = <span style="color: #98be65;">"https://circulart.org/2021/artistas-rueda/"</span>
+<span style="color: #dcaeea;">driver</span> = webdriver.Chrome()
+driver.get(link)
+
+
+<span style="color: #dcaeea;">not_error</span> = <span style="color: #a9a1e1;">True</span>
+<span style="color: #dcaeea;">index</span> = <span style="color: #da8548; font-weight: bold;">1</span>
+<span style="color: #dcaeea;">ids</span> = []
+<span style="color: #51afef;">while</span>(not_error):
+    <span style="color: #51afef;">try</span>:
+        <span style="color: #dcaeea;">artist_id</span> = driver.find_element_by_xpath(f<span style="color: #98be65;">"/html/body/div[1]/div/div/div/article/div/div/div/div[2]/div/div/div/div/div/div[{index}]"</span>).get_attribute(<span style="color: #98be65;">"id"</span>)
+        <span style="color: #dcaeea;">index</span>+=<span style="color: #da8548; font-weight: bold;">1</span>
+        ids.append(artist_id)
+    <span style="color: #51afef;">except</span>:
+        <span style="color: #dcaeea;">not_error</span> = <span style="color: #a9a1e1;">False</span>
+
+<span style="color: #51afef;">print</span>(<span style="color: #c678dd;">len</span>(ids))
+<span style="color: #dcaeea;">total_info</span>  = []
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> ids:
+    <span style="color: #dcaeea;">artist_url</span> = f<span style="color: #98be65;">"https://circulart.org/2021/portafolio-artista-rueda/?p={i}"</span>
+    driver.get(artist_url)
+    driver.implicitly_wait(<span style="color: #da8548; font-weight: bold;">1</span>)
+    <span style="color: #dcaeea;">artist_name</span> = driver.find_element_by_xpath(<span style="color: #98be65;">"/html/body/div[1]/div/div/div/article/div/div/div/div[2]/div/div[1]/div/div/div/h1"</span>).text
+    <span style="color: #dcaeea;">artist_description</span> = driver.find_element_by_xpath(<span style="color: #98be65;">"/html/body/div[1]/div/div/div/article/div/div/div/div[2]/div/div[1]/div/div/div/div[2]"</span>).text
+    <span style="color: #dcaeea;">artist_gen</span> = driver.find_element_by_xpath(<span style="color: #98be65;">"/html/body/div[1]/div/div/div/article/div/div/div/div[2]/div/div[1]/div/div/div/div[3]"</span>).text
+    <span style="color: #dcaeea;">info</span> = {<span style="color: #98be65;">"name"</span>:artist_name,
+                  <span style="color: #98be65;">"artist_description"</span>:artist_description,
+                  <span style="color: #98be65;">"generos"</span>:artist_gen,
+                  <span style="color: #98be65;">"id_circulart"</span>:i}
+    total_info.append(info)
+
+<span style="color: #dcaeea;">circulart_data</span> = pd.DataFrame(total_info)
+driver.close()
+<span style="color: #51afef;">print</span>(circulart_data)
+</pre>
+</div>
+
+<pre class="example" id="org49e8168">
+206
+                 name                                 artist_description                                            generos id_circulart
+0         Adjazzentes  Adjazzentes es un quinteto que interpreta Sals...  Género: Salsa, Boleros, Baladas, Bachata, Géne...        i8989
+1         Afrodisíaco  Afrodisíaco, ganadores del Festival de Viña de...        Género: Folclor / Tradicional / World music         i303
+2           AFROPICKS  AGENCIA DE BOOKING enfocada en MUSICAS NEGRAS ...                                                           i8332
+3    Agitando Cultura  Productora musical dedicada al desarrollo de c...                                                            i973
+4      Aguaelulo Trío  Aguaelulo trío, conformado por saxofón, marimb...            Género: Músicas Del Pacífico Colombiano       i15357
+..                ...                                                ...                                                ...          ...
+201            Volcán  Volcán es la energía encargada de reunir a Dav...                    Género: Rock / Rock alternativo       i15984
+202       VOX FRACTAL  Vox Fractal es una agrupación colombiana de Ro...                  Género: Alternativo / World Music        i3339
+203            Waahli  Waahli es un artista-músico de ascendencia hai...                              Género: Hip-hop / Rap       i16059
+204       Zafarrancho  Zafarrancho es una agrupación musical colombia...                                   Género: Tropical         i362
+205         Zatélithe  Zatélithe es afrofuturismo. Recrea un laborato...                                       Género: Funk         i893
+
+[206 rows x 4 columns]
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgaeda04e" class="outline-4">
+<h4 id="orgaeda04e"><span class="section-number-4">1.1.4.</span> LastFM bands</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">from</span> selenium <span style="color: #51afef;">import</span> webdriver
+<span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+
+
+<span style="color: #dcaeea;">driver</span> = webdriver.Chrome()
+driver.get(<span style="color: #98be65;">"https://www.last.fm/es/tag/colombia/artists?page=1"</span>)
+driver.implicitly_wait(<span style="color: #da8548; font-weight: bold;">1</span>)
+<span style="color: #dcaeea;">last_page</span> = driver.find_element_by_xpath(<span style="color: #98be65;">"/html/body/div[5]/div[2]/div[5]/div[3]/div/div[1]/nav/ul/li[8]/a"</span>).text
+<span style="color: #dcaeea;">last_page</span> = <span style="color: #c678dd;">int</span>(last_page)
+
+
+<span style="color: #dcaeea;">full_data</span> = []
+<span style="color: #51afef;">for</span> page_number <span style="color: #51afef;">in</span> <span style="color: #c678dd;">range</span>(<span style="color: #da8548; font-weight: bold;">1</span>,last_page+<span style="color: #da8548; font-weight: bold;">1</span>):
+    driver.get(f<span style="color: #98be65;">"https://www.last.fm/es/tag/colombia/artists?page={page_number}"</span>)
+    <span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> <span style="color: #c678dd;">range</span>(<span style="color: #da8548; font-weight: bold;">1</span>,<span style="color: #da8548; font-weight: bold;">30</span>):
+        <span style="color: #51afef;">try</span>:
+            <span style="color: #dcaeea;">artist_name</span> = driver.find_element_by_xpath(f<span style="color: #98be65;">"/html/body/div[5]/div[2]/div[5]/div[3]/div/div[1]/section/ol/li[{i}]/div/h3/a"</span>).text
+            <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"name"</span>:artist_name}
+            full_data.append(artist_name)
+            <span style="color: #51afef;">print</span>(artist_name)
+        <span style="color: #51afef;">except</span>:
+            <span style="color: #51afef;">pass</span>
+
+<span style="color: #dcaeea;">lastfm_data</span> = pd.DataFrame(full_data)
+driver.close()
+<span style="color: #51afef;">print</span>(lastfm_data)
+</pre>
+</div>
+
+<pre class="example" id="org28db0dd">
+Shakira
+Aterciopelados
+Soraya
+Juanes
+Carlos Vives
+Bomba Estéreo
+Miranda
+Sidestepper
+Cabas
+Fonseca
+Joe Arroyo
+Choc Quib Town
+La 33
+Grupo Niche
+Totó La Momposina
+Systema Solar
+Fruko Y Sus Tesos
+Siam
+Andrea Echeverri
+Naif
+Ilona
+Bacilos
+Ekhymosis
+Naty Botero
+Inquisition
+Kraken
+Monsieur Periné
+Fanny Lú
+Maia
+Andrés Cepeda
+Los Corraleros De Majagual
+La Pestilencia
+Anasol
+La Sonora Dinamita
+Pornomotora
+Internal Suffering
+Sonora Carruseles
+Marta Gómez
+Jimena Angel
+Paula Arenas
+Superlitio
+Pernett
+ChocQuibTown
+Yuri Buenaventura
+Cali &amp; El Dandee
+Stephanie Cayo
+Puerto Candelaria
+The Latin Brothers
+Velandia y la tigra
+Lucrecia
+Odio A Botero
+Verónica Orozco
+Lucrecia Dalt
+Silvestre Dangond
+The Mills
+Paula
+Doctor Krapula
+1280 Almas
+The Hall Effect
+The Black Cat Bone
+Los De Adentro
+Don Tetto
+Goretrade
+Carolina Marquez
+Nihil Obstat
+Lucas Arnau
+Ondatrópica
+Sanalejo
+Margarita Rosa De Francisco
+Monareta
+Bonka
+Mindly Rotten
+Diomedes Díaz
+Los Gaiteros de San Jacinto
+Diva Gash
+Lucho Bermúdez
+Son De Cali
+Los Titanes
+Coffee Makers
+Jorge Celedon
+Bomba Estéreo
+FRENTE CUMBIERO
+Koyi K Utho
+Esteman
+Masacre
+Witchtrap
+Sismo
+Lido Pimienta
+Conector
+La Revuelta
+J Balvin
+V For Volume
+La Derecha
+Retrovisor
+Jerau
+Wganda Kenya
+Estados Alterados
+Purulent
+Carnivore Diprosopus
+Parabellum
+Afrosound
+Pedro Laza y Sus Pelayeros
+Kaleth Morales
+Binomio De Oro
+Bajo Tierra
+Aniceto Molina
+Sin Animo De Lucro
+Ines Gaviria
+Ancient Necropsy
+Amputated Genitals
+Nightmare
+Los Hispanos
+Suppuration
+Carnal
+Inbreeding Sick
+Los Hermanos Zuleta
+Orquesta Guayacán
+Alfredo Gutierrez
+Los Diablitos
+Kafeina
+Santiago Cruz
+Hotel Mama
+Sublagrimal
+Kali Uchis
+El Sie7e
+Maluma
+Nina Rodriguez
+Sara Tunes
+Skampida
+Nawal
+Los 50 de Joselito
+Jessie
+Wormeaten
+Carnagia
+Calambuco
+Rafael Escalona
+Joe Arroyo Y La Verdad
+UnderThreat
+Akash
+Niyireth
+Petrona Martínez
+Fruko Y Sus Tesos
+Helenita Vargas
+Juan Pablo Vega
+Martina La Peligrosa
+Blasfemia
+Tati
+CHITE
+Los Miticos Del Ritmo
+Aggressive
+De Juepuchas
+Sicotrópico
+Terrorkode
+Isa Mebarak
+Majo Riveira
+Joha
+Ela Minus
+Profetas
+Panorama
+Jason Castro
+Lucho Bermúdez
+Michi Sarmiento Y Sus Bravos
+Lisandro Meza
+Yolanda Rayo
+Nancy Murillo
+Evil Darkness
+The Speakers
+Phalogore
+Blaze Inside
+Los Warahuaco
+La-33
+Toto La Momposina y Sus Tambores
+Los Golden Boys
+Orquesta de Edmundo Arias
+Claudia Gómez
+Pernett &amp; The Caribbean Ravers
+Tenebrarum
+Antonio Arnedo
+Meridian Brothers
+Jorge Celedón
+Adriana Lucia
+AudioTrip
+Los Embajadores Vallenatos
+Dragon y Caballero
+Mauricio &amp; PalodeAgua
+Lito Barrientos y su Orquesta
+Soulburner
+Los Elefantes
+Cabuya
+Blasting Hatred
+The Sound Of Lucrecia
+BambaraBanda
+Maía
+Cielito Drive
+Niyireth Alarcón
+Cash!
+Romperayo
+Elsa y Elmar
+Jery
+Verde3
+Orlando Fortich y su Orquesta
+Los Seven Del Swing
+Chico Cervantes
+Devoured Decapitation
+Nicole
+Triple X
+Reynaldo Armas
+Lorelei
+Lulacruza
+Legend Maker
+Trópico Esmeralda
+Cyanide Regime
+Vitam et Mortem
+Leishmaniasis
+Neus
+Andrés Landero
+Gabriel Romero
+La Sonora Cordobesa
+Los Chiches Vallenatos
+Orquesta Los Numero Uno de Colombia
+Edgar Joel
+Grupo Galé
+Mojiganga
+Doctor Krápula
+Filmmaker
+Alerta
+La Sonora Cienaguera
+Garzón y Collazos
+Gaias Pendulum
+Asdrubal
+Los Gigantes Del Vallenato
+Dulce María
+Psyborg Corp.
+Los Suziox
+Pop Corn
+Tr3s de Corazón
+Génesis
+Psy_project
+Seis Peatones
+Nelson Pinedo
+Velez
+Peter Manjarres
+Zona Marginal
+I.R.A.
+De Bruces a Mi
+Todos los Perros
+Garzón y Collazos
+(((mR.eKo)))
+Pedrina y Rio
+Tumbacatre
+Señornaranjo
+Zubla:grimal
+PAPAYA REPUBLIK
+Colectro
+Mitú
+Mr. Bleat
+Marre
+Juan Andrés Ospina
+Elia y Elizabeth
+Sol Escobar
+Alejandro Sanz
+Manufactura
+Che Sudaka
+Poper
+Raton Perez
+Clodomiro Montes y el Super Combo Curro
+Crecencio Camacho y El Super Combo Curro
+Lalo Orozco y su Combo Sabroso
+Puerto Rico y Su Combo
+Orquesta Sonora Curro
+Telebit
+Soulless
+Agressor
+Skull
+Ethereal
+Astaroth
+Leonor González Mina
+Edmundo Arias
+Claudia Gómez
+Quantic and his Combo Bárbaro
+La Misma Gente
+Yogth Sothoth
+Nonsense Premonition
+Twilight Glimmer
+Masturbation
+Salt Cathedral
+AGONY
+Extremely Rotten Flesh
+Sadistic Mutilation
+Saproffago
+Disoluto
+Fermented Fetus
+Fanny Lú
+Confusion
+Naga
+Los Nemus Del Pacifico
+Thy Antichrist
+Armando Hernandez Y Su Conjunto
+Orquesta Canela
+La Sonora Del Caribe
+Rodolfo Y Su Tipica RA7
+El Sexteto Miramar
+Climaco Sarmiento y Su Orquesta
+Los Tupamaros
+Los Graduados
+Mauricio Garcia Marulanda
+Sanalejo
+Batracios
+LAPM
+Andres Landeros
+Sonora Tropicana
+Ursus
+Tinto
+Ana y Jaime
+Los Flippers
+Sexy Lucy
+Ivan Villazon
+Binomio de Oro de América
+Alicastro
+Alejo Durán
+Luifer Cuello
+Los Inquietos
+Sebastián Yepes
+Guillermo Buitrago
+Fabian Corrales
+Jiggy Drama
+Peregoyo Y Su Combo Vacaná
+Alkilados
+Ultrageno
+Alberto Pacheco y su Conjunto
+Grito
+Son Palenque
+La Integracion
+Manuel Alvarez y Sus Dangers
+Abelardo Carbonó y su Conjunto
+Banda Los Hijos de La Niña Luz
+Andres Landero
+Lucho Peréz
+Luciferian
+Colombiafrica
+Frankie Ha Muerto
+Parlantes
+El sin sentido
+Coldnight
+Gaiteros De San Jacinto
+Octavio Mesa
+Mojiganga
+Sistema Sonoro Skartel
+Ultrágeno
+Nepentes
+Julián Mayorga
+La Montaña Gris
+Anibal Velasquez
+Aníbal Velásquez
+NativeMassiva
+Natalia Bedoya
+Orquesta Guayacán
+Mónica Giraldo
+Los Embajadores
+Incinerating Prophecies
+Dub Killer Combo
+res gestae
+Angel Negro
+[neuma]
+Diomedes Díaz
+Pescao Vivo
+Remembrance of Pain
+Dafne Marahuntha
+Morfonia
+I&amp;Crisjah
+Danny Daniel
+Jimena Ángel
+Gatoblanco
+Matiz y Semblanza y El Colectivo La Gallera
+Zendas
+Miguel Morales
+Cescru Enlace
+SANTIAGO LOZANO
+Sagrada escritura
+Burkina
+[DEW] &lt;Digital Evil Whispers&gt;
+La Bermúdez
+Glöster Gladiattor
+Crack Family
+Melany Moloney
+Zone Pereke
+Los Pirañas
+Zehtyan
+Quinta Columna
+Diana Angel
+Old Providence
+Celso Piña
+Victor Manuelle
+Eternal
+Jerry Rivera
+Palenke Soultribe
+Alex Young
+Locos Por Juana
+Rufo Garrido y Su Banda
+Rosendo y su Banda
+Rosendo Martinez Y Su Orquesta
+Cantina y su Combo
+Lucho Bermudez y su Orquesta Sabanera
+Animals Killing People
+Erick Morillo
+Lezrod
+Injury
+Lisandro Meza y su Conjunto
+The Latin Brothers
+Santander Flores
+Silvio Guzman y Conjunto Jose M. Peñaranda
+Toño Fernandez
+Guayacan
+Cristobal Perez y Su Conjunto
+Tony Dize
+Gabriel Romero y su Orquesta
+Cimarron
+Awaken
+Nebiros
+The Passenger
+Johnie All Stars
+los annovas
+Legends
+Agresión
+Catedral
+Melting Flesh
+INNERHATE
+Goreobscenity
+Blessed Slaughter
+Vorpal Nomad
+Ninnagesh
+El Combo De Las Estrellas
+Herpes
+Héctor Buitrago
+Lucho Bermúdez y Su Orquesta
+Utuk Xul
+Galy Galiano
+Las Malas Amistades
+Emme Ya
+Armenia
+Aphangak
+Buena Vista Social Club/Rubén González
+Roberto Camargo
+Ad Finem
+Ekhymosis
+Alci Acosta
+Peregoyo Y Su Combo Vacana
+Conjunto Tipico Vallenato
+PAT Y CHACO
+De Lux Club
+Malalma
+Mojarra Electrica
+Gerardo Sansón &amp; Fred McDonald : Piano y Ritmos
+Coffee Makers
+Bwana
+Juancho Style
+Desecrate
+Overhuman Project
+Sargatanas
+Santa Sangre
+Chimizapagua
+Illary
+esquizofrenia
+King Bongo
+Urban Noise
+Ataque De Sonido
+Agramon
+Grupo Costa Brava
+Over Reaction
+Eshtadur
+Antipoda
+Los Yetis
+Andres Gil
+Grupo Bahia
+Zona Cero
+Los Soneros de Gamero
+los ampex
+69 Nombres
+Vicky
+La Fábrica
+La Etnnia
+Julio Cesar
+Juan Carlos Coronel
+Conjunto Clasico
+Charlie Zaa
+Alejandro Durán
+Calixto Ochoa y Los Papaupas
+Hugo Racedo y su Conjunto
+Pasabordo
+Alfredo Gutiérrez
+Reykon
+Rodolfo Aicardi
+Poligamia
+Jorge Velosa
+Diomedes Diaz;Ivan Zuleta
+Bovea y sus Vallenatos
+Orquesta Nunez
+Mojito Lite
+Sebastian Yatra
+Wamba
+Cuentos de los Hermanos Grind
+Silvia O
+Maleficarum
+Conde Maquina
+Rainfall
+Zelfish Perez
+Mami
+Baldomero Urieles con Efrian Burgos y su Conjunto
+Molo
+BESTIALIZED
+TBCB
+Calixto Ochoa
+PalmaCoco
+Pacho Galan y Su Orquesta
+Tropicombo
+Michi Sarmiento
+Luis Mateus
+Cassimbas Negras
+Rabel Y su Grupo
+Carlos Roman
+Pedro Beltran
+La Cumbia Moderna De Soledad
+Álvaro Mendoza
+Anibal Velasquez Y Su Conjunto
+Clodomiro Montes
+Colombiafrica - The Mystic Orchestra
+Neurosis Inc
+Leon Bruno
+Smoking Underdog
+Reptile
+Alex Campos
+Malamuerte
+Katarsis
+Pr1mal
+Banda nueva
+Reencarnación
+Ego;
+La Toma
+Struck 9
+PORDIOZERO
+Nagäf
+Chulo
+Endark
+Otto Serge &amp; Rafael Ricardo
+Almadia
+Orquesta Sinfónica De Chapinero
+La Severa Matacera
+I.R.A.
+Citadino Blues &amp; rock
+Lo Ke Diga El Dedo
+Burning Cakes
+Nadie
+La Nueva División
+Ensamble Sinsonte
+Asdrúbal
+Mmodcats
+Rocka
+Zygomatik
+Thunderblast
+Kimbawe
+HANSEL CAMACHO
+Escarcha
+Ricardo Gallo
+Diana Pereira
+Cabas
+Revez
+El Pez
+Choc Quib Town
+Impromtus Ad Mortem
+Shakira
+Mortiferian
+Mojarra Eléctrica
+Carbure
+El Sayayin
+Rayito Colombiano
+Julio Nava
+Alan Abrahams &amp; Leonardo Fernandez
+Protov
+Kck
+Black Sheep Attack
+Cumbia Tokeson
+Calibre 38
+La MiniTK del Miedo
+Bomba Estéreo
+El Nene y sus Traviesos
+Andrés Velásquez
+JHT
+Los Tolimenses
+Alé Kumá
+Julio Cesar Meza
+Claudia De Colombia
+ATHANASE GENOCIDE
+María Mulata
+Los Arboles
+La lunar
+Averno
+Jose Alfonso Maestre
+TBCBmusic
+Reyes Verdes
+Artefacto
+Ciudad Pasarela
+Diego-M
+Federico Franco
+Kike Santander
+TURBAY
+Inés Gaviria
+Emiliano Zuleta Baquero
+Checo Acosta
+Macondo y su Sonora
+Willie Salcedo
+Anti Todo
+Gastón (El Isleño) con El Conjunto de Jaime Simanca
+Lucho Yepez
+Vietato
+Charleston Cabarette
+Alerta Kamarada
+sociedad violenta
+Supervelcro
+Isachishacta
+Donna Joe Radio
+Gux Swadharma
+Guafa Trio
+Shiry
+Falange &amp; Los Niños Descuartizados
+Bluesila
+Indomite
+The Jhonies
+Natty fyah
+Zalama Crew
+Guardianes del Tártaro
+Two Way Analog
+Conjunto Los Rumberos
+Exgenesis
+Carolina Sabino
+r:Noire
+Pasaporte
+Karol G
+Ginger y los tóxicos
+pablo awad
+-kat-
+Via Rustica
+Plectro Trío
+Sexteto Tabalá
+eLaMoRTe (The Question)
+Abre Sierra - Remaster
+Excomulgación
+Like Some Cat From Japan
+Eternal Chaos
+Gotas de Rap
+Synth Stereo
+Pedro Huérfano
+Victoria Sur
+Acratas
+Ayahuasca (Col)
+Los Inmortales
+5 de Menos
+Los Viajes del Viento
+flaco flow y Melanina
+JUNIOR SAMBO
+Jose A Morales
+niño naranja
+Nightmare
+*meele*
+Transporte
+Emma Project
+Dexkoncierto
+The Bares Band
+Etelvina Maldonado
+Los Tri O
+Ataque en Contra
+LAradio
+LAURY &amp; CERO DECIBELES
+La Beltek
+Cresencio Salcedo
+Hermanos Tuiran
+Guillermo Munoz y Conjunto Típico del Magdalena
+Jaime Simanca y sus Fandangueros
+La Cumbia Soledeña
+Lucho Campillo y su Conjunto
+Shade Agony
+Diamante Eléctrico
+Ex7rac7o 7
+Grupo Gualajo
+Los Poetas Acidos
+Grupo Herencia
+Donkristobal
+Herpes
+sn_serialnumber
+NESHKEN
+Saint Yago
+Jardín Láser
+Fondo Blanco
+Hellbreaker
+Atticus Anthem
+TORTURE EVERLASTING
+Linjeagui
+Kadish
+RESSIDUO
+Juan Gabriel Turbay
+Agente VX
+Festival Calle
+Kevin Roldan
+Los Carrangueros de Ráquira
+SISTA RASTALINA
+Danny Fernández
+Jorge Burbano
+Naela
+Natalia Betancurt
+Rock con Pasas
+Silicona Valley
+Kingdom of Blood
+Dormant Seed
+Yandar &amp; Yostin
+The Brainwash Machine
+Luciferian Werewolfs
+Los Petit Fellas
+Jery
+Luz Amparo
+Freddo Lucky Bossi
+Aleja Sanchez
+Chupame El Dedo
+Radio matuna
+Sofia Carson
+La Mambanegra
+Lao Ra
+Maréh
+añañá
+Draw My Apocalypse
+corriendo
+Gotshell
+Perros de Reserva
+Humberto Monroy
+Las Yumbeñas
+MNKYBSNSS
+Flora Martínez
+Mouldered
+Buendía
+Encarta 98
+Ventino
+Emmeleia
+MOÜGLI
+High Rate Extinction
+Lyda Zamora
+Señor Saw
+Salomón Beda
+Pulmonaty
+Llueve En La Montaña
+Rafael Gaitan
+Canalón de Timbiquí
+Mañas Ru-Fino
+Geli2
+Joky Sam
+Maritza Correa
+Sanguinum
+Babelgam
+Various Artists
+Fey
+John Anderson
+Ache
+Elkin &amp; Nelson
+Chalino Sanchez
+Shai
+ALTAVOZ
+Moira
+Climax
+Alberto Pacheco
+Yerba Buena
+Amen
+Lily
+Lily Vasquez
+Monica Giraldo
+Homero y Su Combo con Pancho Galan
+El Gran Romancito y El Super Combo Curro
+Lucho Bermudez Y Su Orquesta
+Alex Acosta y su Orquesta
+Sonido San Francisco
+La Chiva Gantiva
+Pulenta
+Volta
+No
+Cinemacinco
+Arbol de Ojos
+Belial
+The Clocks
+Tito Nieves
+Vertigo
+Héctor Lavoe
+LOTO
+PAZ
+State of the Union
+Dione
+Fidel Nadal
+Muro
+Ynfynyt Scroll
+Insane
+Posthuman
+Nephesh
+King
+Doomsday
+Trio Serenata
+Ismael Rivera
+Eddie Santiago
+Monitor
+Jaime Llano Gonzalez
+Alfredo Gutierrez y Sus Estrellas
+Leonor Gonzalez Mina
+Romulo Caicedo
+Inside
+Hellion
+DLG
+Javier Moreno
+Shakira
+Sacrilegio
+Athanator
+Legacy
+Tito Rojas
+Alejandro Florez &amp; Tibagui
+Mercado Negro
+Moisés Y La Gente Del Camino
+Atrium
+Rey Ruiz
+Marinella
+Insanity
+Toxic
+Libra
+Introspeccion
+Crocell
+Last Tyrant
+Begotten
+Dead Silence
+Héctor Buitrago
+Sagar
+Mandrágora
+Adassa
+La Fabrica
+Foe
+Sindicato Sonoro
+Kalenda Maya
+Futhark
+Bagual
+Alquimia
+Frankie Ruiz
+Nelson Y Sus Estrellas
+Babalu
+Pilar Romero
+Threat
+Lilith
+Bastard
+Stallone
+Morton Valence
+Revival
+Morti
+MUG
+Karoll Marquez
+Garnica
+Paradigma
+Under Threat
+Los Guacharacos
+Corpsedecay
+Holy Shit B.S.E
+Elbow Drop
+Planta Cadaver
+Hedor
+Ossuary
+cysted
+The Mythology
+Andromorphus Rexalia
+Holocausto
+David Ospina
+The Mirror
+Caudal
+Ad Inferos
+Tron
+Sperma
+PxExNxE
+FERMENTED FETUS (official)
+Bacteremia
+No Silence
+Billo's Caracas Boys
+Luis Enrique
+SEXYDEATH
+Abaddon
+Tony Vega
+Sonora Dinamita
+Arcangel
+Alexis &amp; Fido
+Totó La Momposina y sus Tambores
+Raiz
+Los Toros Band
+Fungitonic
+Kazuka
+The Slides
+Popelines
+Mongoloid Gnome
+Reyli
+Zoma
+Camo
+TOQUE DE KEDA
+Shakira
+Caballo
+Forenssick
+Tom Sawyer
+Chon Arauza
+Toke De Keda
+Quantic and his Combo Bárbaro
+Guerrilla Seca
+Grupo Cimarrón
+Chainsaw Killer
+son de azucar
+Sonora Del Caribe
+Antonio Rivas
+Pastor López
+Ivann
+Tulia
+Gabino Pampini
+Gusi &amp; Beto
+Agnosis
+Highway
+The Flippers
+Liluca
+Pala
+Nash
+Tour De Force
+CO2
+Ignis Haereticum
+Occultus
+Metro Ketamina
+Terra Sur
+Introspección
+Paulinho Moska
+Los Young Beats
+69 enfermos
+K-93
+Karma Fox
+Octubre Negro
+Rey GordiflÓn
+Danny Dodge
+Némesis
+Ectoplasma
+Miguel Bosé &amp; Shakira
+Rikarena
+Yajaira
+Master Boy
+Juan Carlos Quintero
+Ephniko
+Desorden Social
+Transporte
+Dia De Los Muertos
+Sol Barniz
+Guahaihoque
+Raíces Andinas
+Altazor
+Savage Aggression
+Maite Hontelé
+O.A.G
+Trópico Esmeralda
+Fainal
+Frankie Jazz
+rocksito
+Edmar Castaneda
+Iván Villazón
+Morbid Macabre
+Pulso
+Montoya
+Jaén Kief
+CONI
+DJ Wady
+Frozen Darkness
+Reencarnación
+Apolion's Genocide
+Alcoholic Force
+MEPHIZTOPHEL
+Guerra Total
+Lucho Bermúdez y Su Orquestra
+Evil Whiplash
+Nox 210
+Los Árboles
+Maleficio
+Ignacio Peña
+Sexto Sentido
+SiN pUdoR
+Chikas Águila
+Shakira feat. Wyclef
+Orlando Contreras
+Federico Villa
+Grupo Naidy
+Grupo Saboreo
+Andy M
+Diego Vega
+Rodolfo Aicardi con Los Hispanos
+Alex Armes
+Cesar Mora
+Makeda
+ObandO
+M.A.K.U SoundSystem
+Rodolfo Con Los Hispanos
+The Speakers
+Posguerra
+This Early Autumn
+Cero
+                            0
+0                     Shakira
+1              Aterciopelados
+2                      Soraya
+3                      Juanes
+4                Carlos Vives
+..                        ...
+995  Rodolfo Con Los Hispanos
+996              The Speakers
+997                 Posguerra
+998         This Early Autumn
+999                      Cero
+
+[1000 rows x 1 columns]
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org178d7c5" class="outline-4">
+<h4 id="org178d7c5"><span class="section-number-4">1.1.5.</span> Bandas o cantantes famosos</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<p>
+Con el fin del proyecto, una de las cosas que se busca analizar es que factores hacen que una banda sea famosa y que otra no , por lo que también añadiré una lista de cantantes muy famosos colombianos al dataset también scrapeado de <a href="https://www.ranker.com/list/bands-from-colombia/reference">https://www.ranker.com/list/bands-from-colombia/reference</a>
+</p>
+
+<p>
+<b>nota:el script que scrapeo estos datos está en el repositorio pero no se puede llamar desde el notebook pues es un poco mañoso</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> json
+<span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+<span style="color: #51afef;">with</span> <span style="color: #c678dd;">open</span>(<span style="color: #98be65;">"famous_data.json"</span>) <span style="color: #51afef;">as</span> <span style="color: #c678dd;">file</span>:
+    <span style="color: #dcaeea;">data</span> = json.load(<span style="color: #c678dd;">file</span>)
+<span style="color: #dcaeea;">famous_dataframe</span> = pd.DataFrame(data)
+<span style="color: #51afef;">print</span>(famous_dataframe)
+</pre>
+</div>
+
+<pre class="example" id="orga65839a">
+                      name
+0                  Shakira
+1                   Juanes
+2            Mateo Camargo
+3        Alfredo Gutierrez
+4            Alex González
+..                     ...
+100     Gabriel Torregrosa
+101       Rafael Rodríguez
+102         Fredys Arrieta
+103      Alejandro Palacio
+104  David Escobar Gallego
+
+[105 rows x 1 columns]
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgbb0c7f8" class="outline-4">
+<h4 id="orgbb0c7f8"><span class="section-number-4">1.1.6.</span> Sin embargo, lo que se pretende con estos datos es extraer solamente los nombres de las bandas activas en la escena colombiana, pues, posteriormente, a partir de estas bandas se obtendrá la información de spotify, por lo que unificaré los datos.</h4>
+<div class="outline-text-4" id="text-1-1-6">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+
+<span style="color: #dcaeea;">colombia_scene_list</span> = []
+
+
+
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">a&#241;ado los datos del dataframe que hice de lastfm</span>
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> lastfm_data[<span style="color: #98be65;">"name"</span>]:
+    <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"name"</span>:i,
+            <span style="color: #98be65;">"lugar_extraido"</span>:<span style="color: #98be65;">"lastfm"</span>}
+    colombia_scene_list.append(data)
+
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">a&#241;ado los datos del dataframe que hice de famosos previamente</span>
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> famous_dataframe[<span style="color: #98be65;">"name"</span>]:
+    <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"name"</span>:i,
+            <span style="color: #98be65;">"lugar_extraido"</span>:<span style="color: #98be65;">"pagina_artistas_famosos"</span>}
+    colombia_scene_list.append(data)
+
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">a&#241;ado los datos de circulart</span>
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> circulart_data[<span style="color: #98be65;">"name"</span>]:
+    <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"name"</span>:i,
+            <span style="color: #98be65;">"lugar_extraido"</span>:<span style="color: #98be65;">"circulart"</span>}
+    colombia_scene_list.append(data)
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">a&#241;ado los datos del dataframe que hice de BOMM previamente</span>
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> bomm_data[<span style="color: #98be65;">"band_name"</span>]:
+    <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"name"</span>:i,
+            <span style="color: #98be65;">"lugar_extraido"</span>:<span style="color: #98be65;">"bomm"</span>}
+    colombia_scene_list.append(data)
+
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">a&#241;ado los datos que descargue del SIMUS</span>
+<span style="color: #51afef;">for</span> i <span style="color: #51afef;">in</span> datos_simus[<span style="color: #98be65;">"Nombre"</span>]:
+    <span style="color: #dcaeea;">data</span> = {<span style="color: #98be65;">"name"</span>:i,
+            <span style="color: #98be65;">"lugar_extraido"</span>:<span style="color: #98be65;">"simus"</span>}
+    colombia_scene_list.append(data)
+
+<span style="color: #dcaeea;">colombia_state_names</span> = pd.DataFrame(colombia_scene_list)
+<span style="color: #5B6268;">#</span>
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">guardo los datos para vincularlos posteriormente con spotify y con youtube</span>
+colombia_state_names.to_csv(<span style="color: #98be65;">"nombres_bandas_generados.csv"</span>)
+<span style="color: #51afef;">print</span>(colombia_state_names.tail(<span style="color: #da8548; font-weight: bold;">5</span>))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge989039" class="outline-3">
+<h3 id="orge989039"><span class="section-number-3">1.2.</span> Merge con Spotify:</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-orgfe2064c" class="outline-4">
+<h4 id="orgfe2064c"><span class="section-number-4">1.2.1.</span> Concepto</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Spotify cuenta con una API bastante completa que suministra mucha información
+sobre las bandas que se encuentran en esta plataforma. Ya que se tiene un
+dataset con muchos nombres de bandas que suenan en la escena de
+la música colombiana, ahora lo que busco es enriquecer los datos que tengo
+buscando los nombres de las bandas en spotify y extrayendo sus features. En un
+proyecto anterior, junto con Juan Pablo, habíamos hecho una clase que funcionaba
+dentro de la API de spotify para relacionar nombres de artistas con sus
+respectivos ids en spotify
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4716872" class="outline-4">
+<h4 id="org4716872"><span class="section-number-4">1.2.2.</span> Proceso de enriquecer los datos:</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+previamente se almacenaron los datos en &ldquo;nombres<sub>bandas</sub><sub>generados.csv</sub>&rdquo; , lo que
+busco es asociar a cada artista con su respectivo id de spotify con el fin de
+luego poder extraer la información correspondiente a este
+</p>
+
+<p>
+<b>fue muy pesado el script que hacía el merge por lo que me tocó correrlo como un script aparte que está en el repositorio pero no se puede correr desde el documento</b>, de todas formas, los datos sobre los que se va a trabajar el proyecto son estos (aunque luego se podrían adjuntar matrices respectivas a las músicas de cada artista de ser pertinente)
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> pandas <span style="color: #51afef;">as</span> pd
+<span style="color: #dcaeea;">final_data</span> = pd.read_csv(<span style="color: #98be65;">"final_data.csv"</span>)
+<span style="color: #51afef;">print</span>(final_data.head(<span style="color: #da8548; font-weight: bold;">4</span>))
+<span style="color: #51afef;">print</span>(final_data.columns)
+<span style="color: #51afef;">print</span>(final_data.shape)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga3db10c" class="outline-2">
+<h2 id="orga3db10c"><span class="section-number-2">2.</span> Razón por la cuál elegimos esta base de datos:</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org6af18d5" class="outline-3">
+<h3 id="org6af18d5"><span class="section-number-3">2.1.</span> 1</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+porque junto con Juan Pablo nos divertimos haciendo proyectos relacionados con música ya que siempre descubrimos bandas excelentes. Además, porque tiene sentido estudiar la música que consumimos.
+</p>
+</div>
+</div>
+<div id="outline-container-org9b69a57" class="outline-3">
+<h3 id="org9b69a57"><span class="section-number-3">2.2.</span> 2</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+porque el hecho de que no existan datasets sobre el tema implica que es un tema que nadie ha estudiado con rigurosidad, y este análisis le puede servir a promotores de la industria musical o a bandas de amigos que quieran tomar estrategias para aumentar su popularidad.
+</p>
+</div>
+</div>
+<div id="outline-container-org186e4c2" class="outline-3">
+<h3 id="org186e4c2"><span class="section-number-3">2.3.</span> 3</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+porque este proyecto puede revelar un panorama muy interesante de la música en Colombia
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga212e40" class="outline-2">
+<h2 id="orga212e40"><span class="section-number-2">3.</span> Qué métodos pueden potencialmente aplicarse con dicha base de datos.</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org4ba3417" class="outline-3">
+<h3 id="org4ba3417"><span class="section-number-3">3.1.</span> Respecto a la comparación:</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Se pueden usar métodos de comparación para ver que factores influyen en la popularidad de un artista en Colombia
+</p>
+</div>
+</div>
+<div id="outline-container-org54cf121" class="outline-3">
+<h3 id="org54cf121"><span class="section-number-3">3.2.</span> Respecto a la clasificación:</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Se puede intentar aplicar métodos de regresiones logísticas para saber si un artista, según sus features, va a ser popular o no
+</p>
+</div>
+</div>
+<div id="outline-container-org3a2d848" class="outline-3">
+<h3 id="org3a2d848"><span class="section-number-3">3.3.</span> Respecto al clustering:</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Se puede aplicar modelos de clustering como Kmeans para entender que tipos de bandas suenan en nuestro país
+</p>
+</div>
+</div>
+<div id="outline-container-org602f6ea" class="outline-3">
+<h3 id="org602f6ea"><span class="section-number-3">3.4.</span> Respecto a la reducción de dimensionalidad:</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+Se puede reducir la dimensión de las matrices de los mel-espectrogramas de
+canciones de los artistas para poder visualizar en un plano un panorama completo de la música
+colombiana (que en realidad es mi meta personal con este proyecto.) , con esto,
+tener una visión mas clara de como se mueve la onda musical en Bogotá.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Rodrigo Castillo, Alejandra Campo, Gran Maestro Chamán.</p>
+<p class="date">Created: 2021-10-28 Thu 11:52</p>
+</div>
+</body>
+</html>

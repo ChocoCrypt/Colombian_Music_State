@@ -1,4 +1,5 @@
 from youtubesearchpython import *
+from tqdm import tqdm
 import json
 import pandas as pd
 from time import sleep
@@ -121,7 +122,7 @@ def resume_10_songs_by_an_artist(artist_name):
         #toca borrarlos con el system
         sleep(1)
         os.system(f"rm artists/{artist_name}/{artist_name}_unified.mp3") #ACA BORRO LAS CANCIONES PARA PODERLO CORRER EN MI SERVIDOR
-        os.system(f"rm -r artists/{artist_name}") #ACA BORRO LA CARPETA PARA NO HACER SPAM
+        os.system(f"rm -rf artists/*") #ACA BORRO LA CARPETA PARA NO HACER SPAM
         info = {"artist":original_name,
                 "x1":str(valores[0]),
                 "x2":str(valores[1])}
@@ -138,7 +139,7 @@ def resume_10_songs_by_an_artist(artist_name):
 def agarrar_toda_la_lista(datos):
     data = pd.read_csv(datos)
     total_data = []
-    for i in data["name_scrapped"]:
+    for i in tqdm(data["name_scrapped"]):
         info = resume_10_songs_by_an_artist(i)
         total_data.append(info)
         #hay que poner este sleep para que sigan corriendo los siguientes

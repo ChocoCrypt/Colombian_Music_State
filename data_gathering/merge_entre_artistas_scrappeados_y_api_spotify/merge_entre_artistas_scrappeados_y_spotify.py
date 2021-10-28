@@ -1,4 +1,5 @@
 from spoty import *
+from tqdm import tqdm
 from time import sleep
 import pandas as pd
 from progress.bar import Bar
@@ -11,8 +12,7 @@ datos = pd.read_csv("nombres_bandas_generados.csv" , index_col = None)
 index = 0
 final_data_for_analysis = []
 #recorro todos los artistas de spotify y busco sus respectiva informacion si esta, si no, la dejo como nula
-bar = Bar("progress of merge..." , max = len(datos["name"]))
-for i in datos["name"]:
+for i in tqdm(datos["name"]):
     try:
         real_name = i
         artista = spotify.obtener_artista_nombre(i)
@@ -26,7 +26,6 @@ for i in datos["name"]:
         artist_type = artista["type"]
         lugar_extraido = datos["lugar_extraido"][index]
         index += 1
-        bar.next()
     except Exception as e:
         real_name = i
         artista = "not in database"
@@ -40,7 +39,6 @@ for i in datos["name"]:
         artist_type =  "not in database"
         lugar_extraido = datos["lugar_extraido"][index]
         index += 1
-        bar.next()
     #esta es la información que va a tener el dataframe total
     info = {"name_scrapped":i,
             "id":id,
