@@ -153,7 +153,7 @@ def resume_10_songs_by_an_artist(artist_name):
 def agarrar_toda_la_lista(datos):
     data = pd.read_csv(datos)
     total_data = []
-    for i in tqdm(data["name_scrapped"][0:5]): #ACA LO PUSE SOLO % PARA VER DATOS DE PRUEBA
+    for i in tqdm(data["name_scrapped"]): #ACA LO PUSE SOLO % PARA VER DATOS DE PRUEBA
         info = resume_10_songs_by_an_artist(i)
         total_data.append(info)
         #hay que poner este sleep para que sigan corriendo los siguientes
