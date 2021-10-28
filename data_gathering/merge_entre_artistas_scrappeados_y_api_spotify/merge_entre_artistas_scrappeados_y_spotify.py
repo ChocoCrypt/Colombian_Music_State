@@ -41,7 +41,7 @@ for i in tqdm(datos["name"]):
         index += 1
     #esta es la información que va a tener el dataframe total
     info = {"name_scrapped":i,
-            "id":id,
+            "id":ide,
             "link_spotify":link_spotify,
             "followers":followers,
             "generos":generos,
