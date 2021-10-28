@@ -159,6 +159,9 @@ def agarrar_toda_la_lista(datos):
         #hay que poner este sleep para que sigan corriendo los siguientes
         print("preparando el siguiente")
         sleep(1)
+        #ME VI FORZADO A GUARDAR UN DATAFRAME TRANSICIONAL MIENTRAS SE CORREN LOS DATOS CON EL FIN DEL PROYECTO
+        transition_dataframe = pd.DataFrame(total_data)
+        transition_dataframe.to_csv("transitional_dataframe.csv")
     return(total_data)
 
 
