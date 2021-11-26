@@ -37,7 +37,7 @@ for i in datos["song_descriptor"]:
 x = np.array(descriptors)
 y = np.array(popularidades[1:])
 
-x = np.array([x for x in datos["x1_descriptive"]])
+x = np.array([x for x in datos["x1_graphics"]])
 y = np.array(popularidades)
 
 print(x.shape , y.shape)
