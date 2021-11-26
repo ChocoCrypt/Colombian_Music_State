@@ -1,11 +1,30 @@
 import seaborn as sns
+import librosa
 from sklearn import preprocessing
 from sklearn import utils
+from sklearn.decomposition import PCA
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+
+
+#resume file de la carpeta de recolectar youtube para poder medir los espectrogramas
+def get_resume_of_file(filepath , k_values):
+ #reading files with librosa
+    samples,sampling_rate = librosa.load(filepath)
+    #creating spectrogram
+    sgram = librosa.stft(samples)
+    #generating mel spectrogram
+    sgram_mag , _ = librosa.magphase(sgram)
+    mel_scale_sgram = librosa.feature.melspectrogram(S=sgram_mag , sr = sampling_rate)
+    #re scaling mel pectrograms with PCA
+    pca = PCA(n_components = k_values)#    IMPORTANTE QUE ACA SE DECIDE CUANTOS VECTORES VAMOS A TENER
+    pca.fit(mel_scale_sgram)
+    values = pca.singular_values_
+    print(values)
+    return(values)
 
 #se leen los datos
 datos = pd.read_csv("completoSinRep.csv")
@@ -71,9 +90,50 @@ print("running LogisticRegression regression")
 lgreg = LogisticRegression()
 lgreg.fit(vectores ,popularidades )
 
+reg_proms = []
+for i in range(len(artistas)):
+   intento = lgreg.predict(vectores[i].reshape(1,-1))[0]
+   reg_proms.append(intento)
+
+reg_proms_mean = np.mean(reg_proms)
+
+
 print("running rdforest")
 rdforest = RandomForestClassifier()
 rdforest.fit(vectores , popularidades)
 
+#ahora voy a poner 2 canciones , una famosa y otra no, y ver como predice su popularidad
+means = []
+for i in range(len(artistas)):
+    pred = rdforest.predict(vectores[i].reshape(1,-1))[0]
+    means.append(pred)
+    print(pred , artistas[i])
 
+
+pop_media = np.mean(means)
+print(pop_media)
+
+
+
+valores_pepas = get_resume_of_file("pepas.mp3" , 128)
+valores_tambor = get_resume_of_file("tambor.mp3" , 128)
+valores_despacito = get_resume_of_file("despacito.mp3" , 128)
+pred_pepas = rdforest.predict(valores_pepas.reshape(1,-1))
+pred_tambor = rdforest.predict(valores_tambor.reshape(1,-1))
+pred_despacito = rdforest.predict(valores_despacito.reshape(1,-1))
+
+
+
+print(f"popularidad:\nde pepas:{pred_pepas} , prediccion de tambor:{pred_tambor} , prediccion de despacito:{pred_despacito}")
+
+
+
+"""
+esto aguantaba implementarlo para la regresion lineal pero al final no funciona
+y solo funciona rdforest, el cual funciona bien
+"""
+#pred_pepas = lgreg.predict(valores_pepas.reshape(1,-1))
+#pred_tambor = lgreg.predict(valores_tambor.reshape(1,-1))
+#pred_despacito = lgreg.predict(valores_despacito.reshape(1,-1))
+#print(f"para regresion_logistica: pepas:{pred_pepas} , tambor:{pred_tambor} , despacito:{pred_despacito}")
 
