@@ -29,8 +29,8 @@ panorama de la música en Colombia.
 * Preguntas
 Una de las principales motivaciones que tuvo este informe era entender que tipos
 de agrupaciones musicales hay en Colombia y visualizarlas, ya que siendo un país
-tan diverso, desde la perspectiva del análisis de datos, ¿cuáles tipos de
-música predominan en el país?, ¿cuántas y cuales agrupaciones de grupos que
+tan diverso, desde la perspectiva del análisis de datos, ¿Cuáles tipos de
+música predominan en el país? ¿Cuántas y cuales agrupaciones de grupos que
 cumplen los mismos patrones existen?.
 
 Otra de las motivaciones que tuvo este informe fue entender desde un fin
@@ -48,7 +48,7 @@ de datos utilizando técnicas de recolección de datos  de revistas de música e
 Colombia, para esto se usaron librerias de python tales como Selenium, bs4 y
 requests.
 
-Se recolectaron los nombres de las bandas que están en el bomm (Bogotá Music
+Se recolectaron los nombres de las bandas que están en el BOmm (Bogotá Music
 Market), en Circulart, en La FM y además se añadieron las bandas que están
 registradas en el SIMUS. Posteriormente, a cada banda se le hizo una búsqueda en
 spotify para relacionarla con variables que la API de spotify proporciona, tales
@@ -116,15 +116,15 @@ siguientes resultados:
 
 *** Discusión
 En estos clusters se pueden apreciar las siguientes regularidades:
-1. el grupo de más a la izquierda(2-negro) contiene bandas pertenecientes a la escena indie-alternativa en Colombia
-2. el grupo del medio (0-ocre) contiene bandas pertenecientes a la escena pop en Colombia
-3. el grupo de la derecha(1-morado) contiene bandas que frecuentan sonidos latinoamericanos (reggaeton, dancehall, música del pacífico...etc)
+1. El grupo de más a la izquierda(2-negro) contiene bandas pertenecientes a la escena indie-alternativa en Colombia
+2. El grupo del medio (0-ocre) contiene bandas pertenecientes a la escena pop en Colombia
+3. El grupo de la derecha(1-morado) contiene bandas que frecuentan sonidos latinoamericanos (reggaeton, dancehall, música del pacífico...etc)
 
-de los siguientes grupos se puede ver que las variables que mas los diferencian
+De los siguientes grupos se puede ver que las variables que mas los diferencian
 son:
-1. la popularidad.
-2. la varianza de la popularidad.
-3. las varianzas de tempo en las canciones de los artistas.
+1. La popularidad.
+2. La varianza de la popularidad.
+3. Las varianzas de tempo en las canciones de los artistas.
 
 |                     | Cluster 2 |   Cluster 0 |   Cluster 1 |    Varianza |
 |---------------------+-----------+-------------+-------------+-------------|
@@ -139,7 +139,7 @@ De esto se puede concluir que:
 1. Aunque las bandas que pertenecen al grupo de la derecha(1-morado) tienden a ser mas populares que las de los otros grupos, también hay más varianza de popularidad, es decir que, hay artistas sumamente populares pero también hay artistas muy desconocidos que frecuentan estos ritmos
 2. Las popularidades de las bandas que no pertenecen al grupo de sonidos latinoamericanos es muy parecida, sin embargo, la varianza de popularidad del grupo de pop es menor a la de los otros grupos, por lo que, para una empresa discográfica, invertir dinero en una banda de pop representa un riezgo menor que invertirlo en una banda de indie
 3. La varianza de tempo en el grupo de la música latinoamericana es mayor que en los otros dos grupos, esto se debe a que en este género hay artistas que tienen canciones muy diferentes entre si.
-4. el resto de variables de spotify no proporciona información que sea considerada por la agrupación de K-Means
+4. El resto de variables de spotify no proporciona información que sea considerada por la agrupación de K-Means
 5. Aún cuando históricamente la humanidad haya agrupado a la música en géneros musicales, estos son solamente cateogrías que se han asignado por fines comerciales, sin embargo pueden existir otras formas de agrupar la música según otros criterios u otras métricas, los distintos algoritmos de aprendizaje no supervisado pueden proporcionar diferentes visiónes del panorama musical que no necesariamente estén ligadas a géneros musicales.
 
 ** Respecto al análisis canónico de Correlaciones
@@ -200,20 +200,22 @@ resultados que el modelo de regresión logística:
 
 
 * Bibliografía:
-** Bomm:
+** BOmm:
 El BOmm(Bogotá Music Market) es una revista en la cuál se registran bandas que
-frecuentan en Bogotá: referencia : https://www.bogotamusicmarket.com/
+frecuentan en Bogotá.
+Referencia : https://www.bogotamusicmarket.com/
 ** Circulart:
 Circulart es una revista en la cuál se registran bandas que frecuentan en
 Medellín referencia :  https://circulart.org/2021/
 ** SIMUS:
 El SIMUS es una base de datos en la cuál se tienen que registrar todas las
-bandas que tienen contratos con el estado referencia :
-https://simus.mincultura.gov.co/
+bandas que tienen contratos con el estado.
+Referencia: https://simus.mincultura.gov.co/
 ** LastFM:
 LastFM es una página que contiene mucha información sobre artistas, contiene la
 categoría de artistas colombianos por lo que fue de grán ayuda para este
-proyecto referencia : https://www.last.fm
+proyecto.
+Referencia : https://www.last.fm
 
 * Anexos:
 

@@ -1,4 +1,4 @@
-% Created 2021-11-26 Fri 16:58
+% Created 2021-11-26 Fri 18:41
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -29,7 +29,7 @@
 \maketitle
 
 \section{Resumen}
-\label{sec:org20438c8}
+\label{sec:org19e358f}
 Colombia es un país muy diverso, debido a las diferentes culturas y movimientos
 culturales que hay en nuestro país el panorama de la música es bastante difuso,
 esto porque para los músicos resulta una tarea titánica tratar de entender los
@@ -54,11 +54,11 @@ música colombiana que pueden facilitar una aproximación a la exploración del
 panorama de la música en Colombia.
 
 \section{Preguntas}
-\label{sec:org01ce5fe}
+\label{sec:orgc775fa8}
 Una de las principales motivaciones que tuvo este informe era entender que tipos
 de agrupaciones musicales hay en Colombia y visualizarlas, ya que siendo un país
-tan diverso, desde la perspectiva del análisis de datos, ¿cuáles tipos de
-música predominan en el país?, ¿cuántas y cuales agrupaciones de grupos que
+tan diverso, desde la perspectiva del análisis de datos, ¿Cuáles tipos de
+música predominan en el país? ¿Cuántas y cuales agrupaciones de grupos que
 cumplen los mismos patrones existen?.
 
 Otra de las motivaciones que tuvo este informe fue entender desde un fin
@@ -69,16 +69,16 @@ popularidad de una canción según factores que estén implícitos en su respect
 mel-espectrograma.
 
 \section{Métodos Usados}
-\label{sec:org0142d18}
+\label{sec:org5435710}
 \subsection{Respecto a la recolección de datos:}
-\label{sec:org9f53108}
+\label{sec:orgc0bf7ed}
 Puesto que no existe una base de datos que contenga información sobre las bandas
 en Colombia y sus diferentes sonidos, el grupo optó por generar su propia tabla
 de datos utilizando técnicas de recolección de datos  de revistas de música en
 Colombia, para esto se usaron librerias de python tales como Selenium, bs4 y
 requests.
 
-Se recolectaron los nombres de las bandas que están en el bomm (Bogotá Music
+Se recolectaron los nombres de las bandas que están en el BOmm (Bogotá Music
 Market), en Circulart, en La FM y además se añadieron las bandas que están
 registradas en el SIMUS. Posteriormente, a cada banda se le hizo una búsqueda en
 spotify para relacionarla con variables que la API de spotify proporciona, tales
@@ -86,7 +86,7 @@ como la bailabilidad de ésta, la media del tempo de sus canciones, la
 popularidad, la duración promedio de sus canciones\ldots{}etc.
 
 \subsection{Respecto a la descripción de el sonido específico de una canción y la reducción de dimensionalidad:}
-\label{sec:org22e0b38}
+\label{sec:org047a9a6}
 Una vez teniendo los nombres de las bandas, se descargó la canción mas popular
 de cada banda de youtube y se calculó su respectivo mel-espectrograma, sin
 embargo, esto suponía un problema de memoria, puesto que no es posible almacenar
@@ -115,17 +115,17 @@ dimensionalidad de una canción por banda tomó al rededor de 10 días en una
 máquina T2-micro de AWS.
 
 \subsection{Respecto a la agrupación(clustering):}
-\label{sec:org98f0476}
+\label{sec:orgb395c2f}
 Como uno de los propósitos del proyecto era entender que tipos de agrupaciones
 musicales hay en nuestro país, se implementó K-Means sobre los vectores que
 representaban el sonido de cada banda
 
 \subsection{Respecto al Análisis de Correlaciones:}
-\label{sec:orgedb1e7d}
+\label{sec:org3f2532c}
 Se implementó un modelo de regresión lineal para detectar si había correlaciones entre los sonidos de las canciones y la popularidad de las bandas
 
 \subsection{Respecto a la predicción de la popularidad de canción:}
-\label{sec:org6a62b7f}
+\label{sec:orgfa9a14b}
 Se implementó un modelo de una regresión logística para intentar diferenciar
 bandas populares de bandas impopulares, sin embargo, esto no funcionó, por lo
 que, el grupo siendo consciente de que el tema no fue parte del curso de
@@ -133,9 +133,9 @@ análisis de datos, se implementó un modelo de random forest que obtuvo mucho
 mejores resultados.
 
 \section{Resultados:}
-\label{sec:org52393df}
+\label{sec:org3561c82}
 \subsection{Respecto a la agrupación(clustering):}
-\label{sec:orgdc12d71}
+\label{sec:org5af545a}
 la siguiente gráfica muestra la inercia que conserva la cantidad de clusters
 establecidos por los vectores representantes del sonido de cada banda.
 
@@ -153,20 +153,20 @@ siguientes resultados:
 \end{center}
 
 \subsubsection{Discusión}
-\label{sec:orgf7301cf}
+\label{sec:orgd04c383}
 En estos clusters se pueden apreciar las siguientes regularidades:
 \begin{enumerate}
-\item el grupo de más a la izquierda(2-negro) contiene bandas pertenecientes a la escena indie-alternativa en Colombia
-\item el grupo del medio (0-ocre) contiene bandas pertenecientes a la escena pop en Colombia
-\item el grupo de la derecha(1-morado) contiene bandas que frecuentan sonidos latinoamericanos (reggaeton, dancehall, música del pacífico\ldots{}etc)
+\item El grupo de más a la izquierda(2-negro) contiene bandas pertenecientes a la escena indie-alternativa en Colombia
+\item El grupo del medio (0-ocre) contiene bandas pertenecientes a la escena pop en Colombia
+\item El grupo de la derecha(1-morado) contiene bandas que frecuentan sonidos latinoamericanos (reggaeton, dancehall, música del pacífico\ldots{}etc)
 \end{enumerate}
 
-de los siguientes grupos se puede ver que las variables que mas los diferencian
+De los siguientes grupos se puede ver que las variables que mas los diferencian
 son:
 \begin{enumerate}
-\item la popularidad.
-\item la varianza de la popularidad.
-\item las varianzas de tempo en las canciones de los artistas.
+\item La popularidad.
+\item La varianza de la popularidad.
+\item Las varianzas de tempo en las canciones de los artistas.
 \end{enumerate}
 
 \begin{center}
@@ -187,18 +187,18 @@ De esto se puede concluir que:
 \item Aunque las bandas que pertenecen al grupo de la derecha(1-morado) tienden a ser mas populares que las de los otros grupos, también hay más varianza de popularidad, es decir que, hay artistas sumamente populares pero también hay artistas muy desconocidos que frecuentan estos ritmos
 \item Las popularidades de las bandas que no pertenecen al grupo de sonidos latinoamericanos es muy parecida, sin embargo, la varianza de popularidad del grupo de pop es menor a la de los otros grupos, por lo que, para una empresa discográfica, invertir dinero en una banda de pop representa un riezgo menor que invertirlo en una banda de indie
 \item La varianza de tempo en el grupo de la música latinoamericana es mayor que en los otros dos grupos, esto se debe a que en este género hay artistas que tienen canciones muy diferentes entre si.
-\item el resto de variables de spotify no proporciona información que sea considerada por la agrupación de K-Means
+\item El resto de variables de spotify no proporciona información que sea considerada por la agrupación de K-Means
 \item Aún cuando históricamente la humanidad haya agrupado a la música en géneros musicales, estos son solamente cateogrías que se han asignado por fines comerciales, sin embargo pueden existir otras formas de agrupar la música según otros criterios u otras métricas, los distintos algoritmos de aprendizaje no supervisado pueden proporcionar diferentes visiónes del panorama musical que no necesariamente estén ligadas a géneros musicales.
 \end{enumerate}
 
 \subsection{Respecto al análisis canónico de Correlaciones}
-\label{sec:org2742b0f}
+\label{sec:org72623e4}
 Se intentó ver si había una correlación lineal entre el sonido de las bandas y su popularidad, para esto se implementó un modelo simple de regresión lineal y se obtuvieron los siguientes resultados:
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/corr1.jpeg}
 \end{center}
 \subsubsection{Discusión:}
-\label{sec:orgb8475d2}
+\label{sec:org61c74dd}
 \begin{enumerate}
 \item Se puede notar que existe una correlación lineal muy leve entre el sonido de las bandas y su popularidad en spotify, sin embargo, esta correlación no es muy fuerte.
 \item El hecho de que no existan correlaciones lineales entre ambas variables no quiere decir que no estén correlacionadas de otras formas, esto puede ser un caso de estudio para el proyecto.
@@ -206,7 +206,7 @@ Se intentó ver si había una correlación lineal entre el sonido de las bandas 
 
 
 \subsection{Respecto a la clasificación según la popularidad}
-\label{sec:orgdc68e86}
+\label{sec:orgd442a3a}
 
 De los vectores descriptivos del sonido de cada banda se intentó hacer un modelo
 que fuera capáz de predecir si una banda iba a ser popular o no según la
@@ -257,7 +257,7 @@ C. Tangana, ROSALÍA - Antes de Morirme & 107\\
 \end{center}
 
 \subsubsection{Discusión:}
-\label{sec:org9c7fa8e}
+\label{sec:orge3befb2}
 \begin{enumerate}
 \item Los vectores que describen el sonido de cada canción tienen comportamientos muy poco lineales, por lo que una regresión logística no puede relacionar esta clase de valores con la popularidad de una canción, sin embargo, modelos como Random Forest si pueden, haciendo posibles herramientas para la predicción de la popularidad de bandas en plataformas como spotify.
 \item Como se puede ver, en ambos modelos hay situaciones en las que los resultados no tienen sentido, esto porque los modelos fueron entrenados con datos de bandas en Colombia, también, porque la popularidad de una canción no solamente depende del sonido de una banda o un artista, sino de la fama de éste. Esto puede dar paso a un trabajo futuro en el que se estudie esta clase de comportamientos teniendo en cuenta la popularidad previa de los artistas.
@@ -267,28 +267,30 @@ C. Tangana, ROSALÍA - Antes de Morirme & 107\\
 
 
 \section{Bibliografía:}
-\label{sec:org2ca8dea}
-\subsection{Bomm:}
-\label{sec:org2917d1a}
+\label{sec:org1811e79}
+\subsection{BOmm:}
+\label{sec:org50b6d07}
 El BOmm(Bogotá Music Market) es una revista en la cuál se registran bandas que
-frecuentan en Bogotá: referencia : \url{https://www.bogotamusicmarket.com/}
+frecuentan en Bogotá.
+Referencia : \url{https://www.bogotamusicmarket.com/}
 \subsection{Circulart:}
-\label{sec:org90747ed}
+\label{sec:org737c890}
 Circulart es una revista en la cuál se registran bandas que frecuentan en
 Medellín referencia :  \url{https://circulart.org/2021/}
 \subsection{SIMUS:}
-\label{sec:org15a7f0b}
+\label{sec:org48d4fec}
 El SIMUS es una base de datos en la cuál se tienen que registrar todas las
-bandas que tienen contratos con el estado referencia :
-\url{https://simus.mincultura.gov.co/}
+bandas que tienen contratos con el estado.
+Referencia: \url{https://simus.mincultura.gov.co/}
 \subsection{LastFM:}
-\label{sec:org4ee4ccb}
+\label{sec:orgbeb98ea}
 LastFM es una página que contiene mucha información sobre artistas, contiene la
 categoría de artistas colombianos por lo que fue de grán ayuda para este
-proyecto referencia : \url{https://www.last.fm}
+proyecto.
+Referencia : \url{https://www.last.fm}
 
 \section{Anexos:}
-\label{sec:org9872775}
+\label{sec:org90ce74f}
 
 Todo el proyecto fue desarrollado en el siguiente repositorio:
 \url{https://github.com/Rootdrigo/Colombian\_Music\_State}
