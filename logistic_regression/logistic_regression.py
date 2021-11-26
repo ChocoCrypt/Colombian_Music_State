@@ -121,7 +121,7 @@ valores_despacito = get_resume_of_file("despacito.mp3" , 128)
 pred_pepas = rdforest.predict(valores_pepas.reshape(1,-1))
 pred_tambor = rdforest.predict(valores_tambor.reshape(1,-1))
 pred_despacito = rdforest.predict(valores_despacito.reshape(1,-1))
-
+#HACER HISTOGRAMA DE ESTOS VALORES Y AÑADIR MAS VIDEOS DE YOUTUBE
 
 
 print(f"popularidad:\nde pepas:{pred_pepas} , prediccion de tambor:{pred_tambor} , prediccion de despacito:{pred_despacito}")
@@ -137,3 +137,4 @@ y solo funciona rdforest, el cual funciona bien
 #pred_despacito = lgreg.predict(valores_despacito.reshape(1,-1))
 #print(f"para regresion_logistica: pepas:{pred_pepas} , tambor:{pred_tambor} , despacito:{pred_despacito}")
 
+#lista = pd.DataFrame(lista)
