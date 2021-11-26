@@ -1,4 +1,4 @@
-% Created 2021-11-26 Fri 16:03
+% Created 2021-11-26 Fri 16:58
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -29,7 +29,7 @@
 \maketitle
 
 \section{Resumen}
-\label{sec:org3eda03d}
+\label{sec:org20438c8}
 Colombia es un país muy diverso, debido a las diferentes culturas y movimientos
 culturales que hay en nuestro país el panorama de la música es bastante difuso,
 esto porque para los músicos resulta una tarea titánica tratar de entender los
@@ -44,7 +44,7 @@ muriendo otras.
 El análisis estadístico de datos es una rama de las ciencias de la computación
 que permite inferir distintas propiedades de los datos a partir de métodos que
 se sustentan en la estadística, generalmente, responde a tres problemas
-específicos; la predicción  de factores , la clasificación y el agrupamiento.
+específicos; la predicción  de factores, la clasificación y el agrupamiento.
 Éstas herramientas fueron de gran ayuda para ampliar nuestros conocimientos
 sobre los sonidos musicales que hay en Colombia.
 
@@ -54,11 +54,11 @@ música colombiana que pueden facilitar una aproximación a la exploración del
 panorama de la música en Colombia.
 
 \section{Preguntas}
-\label{sec:org3cfbf60}
+\label{sec:org01ce5fe}
 Una de las principales motivaciones que tuvo este informe era entender que tipos
 de agrupaciones musicales hay en Colombia y visualizarlas, ya que siendo un país
-tan diverso, desde la perspectiva del análisis de datos , ¿cuáles tipos de
-música predominan en el país? , ¿cuántas y cuales agrupaciones de grupos que
+tan diverso, desde la perspectiva del análisis de datos, ¿cuáles tipos de
+música predominan en el país?, ¿cuántas y cuales agrupaciones de grupos que
 cumplen los mismos patrones existen?.
 
 Otra de las motivaciones que tuvo este informe fue entender desde un fin
@@ -69,9 +69,9 @@ popularidad de una canción según factores que estén implícitos en su respect
 mel-espectrograma.
 
 \section{Métodos Usados}
-\label{sec:org3bd977e}
+\label{sec:org0142d18}
 \subsection{Respecto a la recolección de datos:}
-\label{sec:orgfe31b41}
+\label{sec:org9f53108}
 Puesto que no existe una base de datos que contenga información sobre las bandas
 en Colombia y sus diferentes sonidos, el grupo optó por generar su propia tabla
 de datos utilizando técnicas de recolección de datos  de revistas de música en
@@ -79,21 +79,21 @@ Colombia, para esto se usaron librerias de python tales como Selenium, bs4 y
 requests.
 
 Se recolectaron los nombres de las bandas que están en el bomm (Bogotá Music
-Market) , en Circulart , en La FM y además se añadieron las bandas que están
+Market), en Circulart, en La FM y además se añadieron las bandas que están
 registradas en el SIMUS. Posteriormente, a cada banda se le hizo una búsqueda en
 spotify para relacionarla con variables que la API de spotify proporciona, tales
 como la bailabilidad de ésta, la media del tempo de sus canciones, la
 popularidad, la duración promedio de sus canciones\ldots{}etc.
 
 \subsection{Respecto a la descripción de el sonido específico de una canción y la reducción de dimensionalidad:}
-\label{sec:org49b4adf}
-Una vez teniendo los nombres de las bandas , se descargó la canción mas popular
-de cada banda de youtube y se calculó su respectivo mel-espectrograma , sin
+\label{sec:org22e0b38}
+Una vez teniendo los nombres de las bandas, se descargó la canción mas popular
+de cada banda de youtube y se calculó su respectivo mel-espectrograma, sin
 embargo, esto suponía un problema de memoria, puesto que no es posible almacenar
 miles de espectrogramas de canciones en la RAM de los computadores de los
 integrantes del grupo. La solución a este problema es que, al ser los
 mel-espectrogramas matrices de la forma \(A=128\times k\) en donde \(k\) representa
-el sampleo con respecto al tiempo de una canción , fue posible aplicar métodos
+el sampleo con respecto al tiempo de una canción, fue posible aplicar métodos
 de reducción de dimensionalidad como PCA(Principal Component Analysis) para
 representar el sonido de las canciones en vectores de 128 dimensiones, en los
 que cada variable representa valores singulares del resultado de reducir la
@@ -115,17 +115,17 @@ dimensionalidad de una canción por banda tomó al rededor de 10 días en una
 máquina T2-micro de AWS.
 
 \subsection{Respecto a la agrupación(clustering):}
-\label{sec:org434dd14}
+\label{sec:org98f0476}
 Como uno de los propósitos del proyecto era entender que tipos de agrupaciones
 musicales hay en nuestro país, se implementó K-Means sobre los vectores que
 representaban el sonido de cada banda
 
 \subsection{Respecto al Análisis de Correlaciones:}
-\label{sec:orgf9b7915}
+\label{sec:orgedb1e7d}
 Se implementó un modelo de regresión lineal para detectar si había correlaciones entre los sonidos de las canciones y la popularidad de las bandas
 
 \subsection{Respecto a la predicción de la popularidad de canción:}
-\label{sec:orgc22857b}
+\label{sec:org6a62b7f}
 Se implementó un modelo de una regresión logística para intentar diferenciar
 bandas populares de bandas impopulares, sin embargo, esto no funcionó, por lo
 que, el grupo siendo consciente de que el tema no fue parte del curso de
@@ -133,9 +133,9 @@ análisis de datos, se implementó un modelo de random forest que obtuvo mucho
 mejores resultados.
 
 \section{Resultados:}
-\label{sec:org6c54510}
+\label{sec:org52393df}
 \subsection{Respecto a la agrupación(clustering):}
-\label{sec:org291aa62}
+\label{sec:orgdc12d71}
 la siguiente gráfica muestra la inercia que conserva la cantidad de clusters
 establecidos por los vectores representantes del sonido de cada banda.
 
@@ -153,12 +153,12 @@ siguientes resultados:
 \end{center}
 
 \subsubsection{Discusión}
-\label{sec:orgbfe8ecc}
+\label{sec:orgf7301cf}
 En estos clusters se pueden apreciar las siguientes regularidades:
 \begin{enumerate}
 \item el grupo de más a la izquierda(2-negro) contiene bandas pertenecientes a la escena indie-alternativa en Colombia
 \item el grupo del medio (0-ocre) contiene bandas pertenecientes a la escena pop en Colombia
-\item el grupo de la derecha(1-morado) contiene bandas que frecuentan sonidos latinoamericanos (reggaeton, dancehall , música del pacífico\ldots{}etc)
+\item el grupo de la derecha(1-morado) contiene bandas que frecuentan sonidos latinoamericanos (reggaeton, dancehall, música del pacífico\ldots{}etc)
 \end{enumerate}
 
 de los siguientes grupos se puede ver que las variables que mas los diferencian
@@ -171,7 +171,7 @@ son:
 
 \begin{center}
 \begin{tabular}{lrrrr}
- & Cluster 0 & Cluster 1 & Cluster 2 & Varianza\\
+ & Cluster 2 & Cluster 0 & Cluster 1 & Varianza\\
 \hline
 popularity mean & 9.63778 & 6.57615 & 7.56232 & 1.62818\\
 popularity variance & 69.5904 & 54.5974 & 56.1064 & 45.4319\\
@@ -192,13 +192,13 @@ De esto se puede concluir que:
 \end{enumerate}
 
 \subsection{Respecto al análisis canónico de Correlaciones}
-\label{sec:org78d3d90}
+\label{sec:org2742b0f}
 Se intentó ver si había una correlación lineal entre el sonido de las bandas y su popularidad, para esto se implementó un modelo simple de regresión lineal y se obtuvieron los siguientes resultados:
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/corr1.jpeg}
 \end{center}
 \subsubsection{Discusión:}
-\label{sec:org3f42d4b}
+\label{sec:orgb8475d2}
 \begin{enumerate}
 \item Se puede notar que existe una correlación lineal muy leve entre el sonido de las bandas y su popularidad en spotify, sin embargo, esta correlación no es muy fuerte.
 \item El hecho de que no existan correlaciones lineales entre ambas variables no quiere decir que no estén correlacionadas de otras formas, esto puede ser un caso de estudio para el proyecto.
@@ -206,7 +206,7 @@ Se intentó ver si había una correlación lineal entre el sonido de las bandas 
 
 
 \subsection{Respecto a la clasificación según la popularidad}
-\label{sec:org17912d3}
+\label{sec:orgdc68e86}
 
 De los vectores descriptivos del sonido de cada banda se intentó hacer un modelo
 que fuera capáz de predecir si una banda iba a ser popular o no según la
@@ -257,7 +257,7 @@ C. Tangana, ROSALÍA - Antes de Morirme & 107\\
 \end{center}
 
 \subsubsection{Discusión:}
-\label{sec:orge00ed05}
+\label{sec:org9c7fa8e}
 \begin{enumerate}
 \item Los vectores que describen el sonido de cada canción tienen comportamientos muy poco lineales, por lo que una regresión logística no puede relacionar esta clase de valores con la popularidad de una canción, sin embargo, modelos como Random Forest si pueden, haciendo posibles herramientas para la predicción de la popularidad de bandas en plataformas como spotify.
 \item Como se puede ver, en ambos modelos hay situaciones en las que los resultados no tienen sentido, esto porque los modelos fueron entrenados con datos de bandas en Colombia, también, porque la popularidad de una canción no solamente depende del sonido de una banda o un artista, sino de la fama de éste. Esto puede dar paso a un trabajo futuro en el que se estudie esta clase de comportamientos teniendo en cuenta la popularidad previa de los artistas.
@@ -267,28 +267,28 @@ C. Tangana, ROSALÍA - Antes de Morirme & 107\\
 
 
 \section{Bibliografía:}
-\label{sec:org03d1741}
+\label{sec:org2ca8dea}
 \subsection{Bomm:}
-\label{sec:orgd5b2342}
+\label{sec:org2917d1a}
 El BOmm(Bogotá Music Market) es una revista en la cuál se registran bandas que
 frecuentan en Bogotá: referencia : \url{https://www.bogotamusicmarket.com/}
 \subsection{Circulart:}
-\label{sec:orgcb44059}
+\label{sec:org90747ed}
 Circulart es una revista en la cuál se registran bandas que frecuentan en
 Medellín referencia :  \url{https://circulart.org/2021/}
 \subsection{SIMUS:}
-\label{sec:org09787ec}
+\label{sec:org15a7f0b}
 El SIMUS es una base de datos en la cuál se tienen que registrar todas las
 bandas que tienen contratos con el estado referencia :
 \url{https://simus.mincultura.gov.co/}
 \subsection{LastFM:}
-\label{sec:org841e416}
+\label{sec:org4ee4ccb}
 LastFM es una página que contiene mucha información sobre artistas, contiene la
 categoría de artistas colombianos por lo que fue de grán ayuda para este
 proyecto referencia : \url{https://www.last.fm}
 
 \section{Anexos:}
-\label{sec:org7b1b368}
+\label{sec:org9872775}
 
 Todo el proyecto fue desarrollado en el siguiente repositorio:
 \url{https://github.com/Rootdrigo/Colombian\_Music\_State}

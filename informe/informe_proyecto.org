@@ -17,7 +17,7 @@ muriendo otras.
 El análisis estadístico de datos es una rama de las ciencias de la computación
 que permite inferir distintas propiedades de los datos a partir de métodos que
 se sustentan en la estadística, generalmente, responde a tres problemas
-específicos; la predicción  de factores , la clasificación y el agrupamiento.
+específicos; la predicción  de factores, la clasificación y el agrupamiento.
 Éstas herramientas fueron de gran ayuda para ampliar nuestros conocimientos
 sobre los sonidos musicales que hay en Colombia.
 
@@ -29,8 +29,8 @@ panorama de la música en Colombia.
 * Preguntas
 Una de las principales motivaciones que tuvo este informe era entender que tipos
 de agrupaciones musicales hay en Colombia y visualizarlas, ya que siendo un país
-tan diverso, desde la perspectiva del análisis de datos , ¿cuáles tipos de
-música predominan en el país? , ¿cuántas y cuales agrupaciones de grupos que
+tan diverso, desde la perspectiva del análisis de datos, ¿cuáles tipos de
+música predominan en el país?, ¿cuántas y cuales agrupaciones de grupos que
 cumplen los mismos patrones existen?.
 
 Otra de las motivaciones que tuvo este informe fue entender desde un fin
@@ -49,20 +49,20 @@ Colombia, para esto se usaron librerias de python tales como Selenium, bs4 y
 requests.
 
 Se recolectaron los nombres de las bandas que están en el bomm (Bogotá Music
-Market) , en Circulart , en La FM y además se añadieron las bandas que están
+Market), en Circulart, en La FM y además se añadieron las bandas que están
 registradas en el SIMUS. Posteriormente, a cada banda se le hizo una búsqueda en
 spotify para relacionarla con variables que la API de spotify proporciona, tales
 como la bailabilidad de ésta, la media del tempo de sus canciones, la
 popularidad, la duración promedio de sus canciones...etc.
 
 ** Respecto a la descripción de el sonido específico de una canción y la reducción de dimensionalidad:
-Una vez teniendo los nombres de las bandas , se descargó la canción mas popular
-de cada banda de youtube y se calculó su respectivo mel-espectrograma , sin
+Una vez teniendo los nombres de las bandas, se descargó la canción mas popular
+de cada banda de youtube y se calculó su respectivo mel-espectrograma, sin
 embargo, esto suponía un problema de memoria, puesto que no es posible almacenar
 miles de espectrogramas de canciones en la RAM de los computadores de los
 integrantes del grupo. La solución a este problema es que, al ser los
 mel-espectrogramas matrices de la forma $A=128\times k$ en donde $k$ representa
-el sampleo con respecto al tiempo de una canción , fue posible aplicar métodos
+el sampleo con respecto al tiempo de una canción, fue posible aplicar métodos
 de reducción de dimensionalidad como PCA(Principal Component Analysis) para
 representar el sonido de las canciones en vectores de 128 dimensiones, en los
 que cada variable representa valores singulares del resultado de reducir la
@@ -118,7 +118,7 @@ siguientes resultados:
 En estos clusters se pueden apreciar las siguientes regularidades:
 1. el grupo de más a la izquierda(2-negro) contiene bandas pertenecientes a la escena indie-alternativa en Colombia
 2. el grupo del medio (0-ocre) contiene bandas pertenecientes a la escena pop en Colombia
-3. el grupo de la derecha(1-morado) contiene bandas que frecuentan sonidos latinoamericanos (reggaeton, dancehall , música del pacífico...etc)
+3. el grupo de la derecha(1-morado) contiene bandas que frecuentan sonidos latinoamericanos (reggaeton, dancehall, música del pacífico...etc)
 
 de los siguientes grupos se puede ver que las variables que mas los diferencian
 son:
@@ -126,7 +126,7 @@ son:
 2. la varianza de la popularidad.
 3. las varianzas de tempo en las canciones de los artistas.
 
-|                     | Cluster 0 |   Cluster 1 |   Cluster 2 |    Varianza |
+|                     | Cluster 2 |   Cluster 0 |   Cluster 1 |    Varianza |
 |---------------------+-----------+-------------+-------------+-------------|
 | popularity mean     |   9.63778 |     6.57615 |     7.56232 |     1.62818 |
 | popularity variance |   69.5904 |     54.5974 |     56.1064 |     45.4319 |
