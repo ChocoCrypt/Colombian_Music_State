@@ -73,12 +73,19 @@ plt.savefig("clusters_segun_sonido.png")
 
 
 #calculo las medias segun categorías en spotify
+
+md_df = pd.DataFrame(columns=['Cluster 0', 'Cluster 1', 'Cluster 2', 'Varianza'])
+print( md_df )
+print( md_df )
+
+
+
 dfs = [datos.loc[datos['labels']==i] for i in range(cantidad_clusters)]
 for i in datos.columns[133:]:
     mean_cluster = [np.mean(j[i]) for j in dfs]
+
     if(np.var(mean_cluster)>1):
-        print(f"{i}:  {mean_cluster} , {np.var(mean_cluster)}")
+        md_df = md_df.append(pd.DataFrame([mean_cluster + [np.var(mean_cluster)]], columns=['Cluster 0', 'Cluster 1', 'Cluster 2', 'Varianza'], index=[f'{i}']))
 
 
-
-
+print( md_df.to_markdown() )
