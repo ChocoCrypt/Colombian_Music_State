@@ -39,11 +39,11 @@ Se implementó un modelo de una regresión logística para intentar diferenciar 
 ** Respecto a la agrupación(clustering):
 la siguiente gráfica muestra la inercia que conserva la cantidad de clusters establecidos por los vectores representantes del sonido de cada banda.
 #+begin_center
-[[./images/inercias1.png]]
+[[.informe/images/inercias1.png]]
 #+end_center
 Usando el criterio del codo, se estableció que 3 sería un buen número de clusters para estos datos, así, luego de implementar K-Means y analizar el contenido de cada grupo, se obtuvieron los siguientes resultados:
 #+begin_center
-[[./images/clustering1.png]]
+[[.informe/images/clustering1.png]]
 #+end_center
 *** Discusión
 En estos clusters se pueden apreciar las siguientes regularidades:
