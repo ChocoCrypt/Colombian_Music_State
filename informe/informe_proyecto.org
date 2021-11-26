@@ -89,8 +89,7 @@ musicales hay en nuestro país, se implementó K-Means sobre los vectores que
 representaban el sonido de cada banda
 
 ** Respecto al Análisis de Correlaciones:
-Se implementó un modelo de regresión lineal para detectar si había correlaciones
-entre los sonidos de las canciones y la popularidad de las bandas
+Se implementó un modelo de regresión lineal para detectar si había correlaciones entre los sonidos de las canciones y la popularidad de las bandas
 
 ** Respecto a la predicción de la popularidad de canción:
 Se implementó un modelo de una regresión logística para intentar diferenciar
@@ -143,16 +142,61 @@ De esto se puede concluir que:
 4. el resto de variables de spotify no proporciona información que sea considerada por la agrupación de K-Means
 5. Aún cuando históricamente la humanidad haya agrupado a la música en géneros musicales, estos son solamente cateogrías que se han asignado por fines comerciales, sin embargo pueden existir otras formas de agrupar la música según otros criterios u otras métricas, los distintos algoritmos de aprendizaje no supervisado pueden proporcionar diferentes visiónes del panorama musical que no necesariamente estén ligadas a géneros musicales.
 
+** Respecto al análisis canónico de Correlaciones
+Se intentó ver si había una correlación lineal entre el sonido de las bandas y su popularidad, para esto se implementó un modelo simple de regresión lineal y se obtuvieron los siguientes resultados:
+#+attr_html: :width 1000px
+[[./images/corr1.jpeg]]
+*** Discusión:
+1. Se puede notar que existe una correlación lineal muy leve entre el sonido de las bandas y su popularidad en spotify, sin embargo, esta correlación no es muy fuerte.
+2. El hecho de que no existan correlaciones lineales entre ambas variables no quiere decir que no estén correlacionadas de otras formas, esto puede ser un caso de estudio para el proyecto.
+
+
 ** Respecto a la clasificación según la popularidad
-resultados de predicciones de popularidad de canciones que no pertenecen a los
-datos:
+
+De los vectores descriptivos del sonido de cada banda se intentó hacer un modelo
+que fuera capáz de predecir si una banda iba a ser popular o no según la
+plataforma de spotify desde la forma en la que suena. Inicialmente se intentó
+hacer un modelo de regresión logistica simple, sin embargo, este no tuvo buenos
+resultados puesto que los vectores de sonido de las canciones no guardan una
+relación muy lineal con la popularidad de las bandas de spotify. Finalmente, se
+entrenó un modelo de Random Forest sobre los mismos datos que tuvo mejores
+resultados que el modelo de regresión logística:
 
 
 #+attr_html: :width 700px
 [[file:images/hist1.png]]
 
+| Canción                                       | Regresión Logística |
+|-----------------------------------------------+---------------------|
+| Los Saicos - Demolición                       |                  34 |
+| Hit The Button Karaoke - Lo Siento Bb         |                 304 |
+| Rels B - A Mí                                 |                 290 |
+| Conociendo Rusia - No Aguanto Más             |                   0 |
+| Sidestepper - Mas Papaya                      |                   0 |
+| FrioLento - Bichota (Post-Punk)               |                  24 |
+| Bad Bunny - Si Veo a Tu Mamá                  |                   0 |
+| Esteman, Daniela Spalla - Te Alejas Más De Mí |                   0 |
+| Duplat, Santiago Navas - Lo Que Pudimos Ser   |                 186 |
+| C. Tangana, ROSALÍA - Antes de Morirme        |                 354 |
+
+| Canción                                       | Random Forest |
+|-----------------------------------------------+---------------|
+| Los Saicos - Demolición                       |           315 |
+| Hit The Button Karaoke - Lo Siento Bb         |            59 |
+| Rels B - A Mí                                 |           290 |
+| Conociendo Rusia - No Aguanto Más             |             0 |
+| Sidestepper - Mas Papaya                      |           225 |
+| FrioLento - Bichota (Post-Punk)               |             0 |
+| Bad Bunny - Si Veo a Tu Mamá                  |             0 |
+| Esteman, Daniela Spalla - Te Alejas Más De Mí |             0 |
+| Duplat, Santiago Navas - Lo Que Pudimos Ser   |             0 |
+| C. Tangana, ROSALÍA - Antes de Morirme        |           107 |
+
 *** Discusión:
 1. Los vectores que describen el sonido de cada canción tienen comportamientos muy poco lineales, por lo que una regresión logística no puede relacionar esta clase de valores con la popularidad de una canción, sin embargo, modelos como Random Forest si pueden, haciendo posibles herramientas para la predicción de la popularidad de bandas en plataformas como spotify.
+2. Como se puede ver, en ambos modelos hay situaciones en las que los resultados no tienen sentido, esto porque los modelos fueron entrenados con datos de bandas en Colombia, también, porque la popularidad de una canción no solamente depende del sonido de una banda o un artista, sino de la fama de éste. Esto puede dar paso a un trabajo futuro en el que se estudie esta clase de comportamientos teniendo en cuenta la popularidad previa de los artistas.
+
+
 
 
 * Bibliografía:

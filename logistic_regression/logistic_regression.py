@@ -1,4 +1,5 @@
 import glob
+import pprint
 import seaborn as sns
 import librosa
 from sklearn import preprocessing
@@ -163,7 +164,9 @@ complete = [
 ]
 
 df = pd.DataFrame.from_dict(complete)
-print(df.to_markdown())
+md_file = (df.to_markdown())
+with open("md_file" , "w") as file:
+    file.write(md_file)
 
 
 # forest = {
@@ -206,5 +209,3 @@ print(df.to_markdown())
 # plt.show()
 
 
-pprint(forest)
-pprint(logreg)
