@@ -1,4 +1,4 @@
-#+title:     ¿Cómo suena Colombia?
+#+title:     ¿A qué suena Colombia?
 #+Author: Rodrigo Castillo Camargo, Alejadra Campo Archbold, Juan Pablo Sierra Useche
 #+options: toc:nil
 
