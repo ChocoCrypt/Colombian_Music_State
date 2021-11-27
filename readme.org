@@ -164,7 +164,7 @@ resultados que el modelo de regresión logística:
 
 
 #+attr_html: :width 700px
-[[file:images/hist1.png]]
+[[./informe/images/hist1.png]]
 
 | Canción                                       | Regresión Logística |
 |-----------------------------------------------+---------------------|
